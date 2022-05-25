@@ -10,12 +10,19 @@ use App\Exceptions\Handler;
 
 class LoginController extends Controller
 {
+
+
+    public function index()
+    {
+        $pagetitle= "Shah CRM";
+        return view('Welcome',compact('pagetitle'));
+    }
+
+
     function login()
     {
         return view('auth.login');
     }
-
-
     function logout()
     {
         Session::flush(); // removes all session data

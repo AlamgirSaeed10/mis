@@ -28,6 +28,7 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [LoginController::class,'index']);
 
 //departments
 Route::get('/departments',[EmployeeController::class,'show_departments'])->name('departments');
@@ -92,7 +93,7 @@ Route::get('/deletemployeedata/{EmployeeID}',[EmployeeController::class,'deletem
 Route::get('/employeedetail/{EmployeeID}',[EmployeeController::class,'view_employee']);
 
 
-Route::get('/', [LoginController::class, 'login'])->name('auth.login');
+Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
 Route::post('/check', [LoginController::class, 'UserVerify'])->name('auth.check');
 Route::get('/admin_dashboard', [LoginController::class, 'admin_dashboard'])->name('auth.admin_dashboard');
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('auth.logout');
