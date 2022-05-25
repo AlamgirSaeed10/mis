@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class Profile extends Controller
 {
@@ -31,7 +31,7 @@ class Profile extends Controller
 		}else{
 			if($newPassword == $confirmNewPassword)
 			{
-			print_r("both are same");	
+			print_r("both are same");
 			}
 		}
 

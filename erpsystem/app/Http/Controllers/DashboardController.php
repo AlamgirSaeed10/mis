@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use DB,Session,Carbon;
+use Carbon;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    //
-
     public function fetch_notifications(){
-        $get_notice = DB::table('v_notice')->where('EmployeeID',Session::get('EmployeeID'))->orderBy('NoticeID','Desc')->get();
-        return response()->json(['data' => $get_notice]);
+        $data = DB::table('v_notice')->where('Status','0')->where('EmployeeID',Session::get('EmployeeID'))->orderBy('NoticeID','Desc')->get();
+
+        if(count($data) > 0){
+            return response()->json(['data' => $data]);
+        }
     }
 
     public function getRelatedNotice($id){
@@ -24,16 +25,22 @@ class DashboardController extends Controller
         ->update(
             array(
                 'Status' => '1',
-                'uDate' => Carbon\Carbon::now())  
+                'uDate' => Carbon\Carbon::now()
+            )  
         );
-         $getRelatedNotice = DB::table('v_notice')->where('NoticeID',$id)->where('EmployeeID',Session::get('EmployeeID'))->get();
+         $getRelatedNotice = DB::table('v_notice')->where('Status',0)->where('EmployeeID',Session::get('EmployeeID'))->get();
         return response()->json(['updateNotice'=>$updateNotice , 'tot'=>count($getRelatedNotice)]);
     }
-
-
-     public function getNotification(){
-        $get_notice = DB::table('v_notice')->where('EmployeeID',Session::get('EmployeeID'))->where("Status",'0')->orderBy('NoticeID','Desc')->get();
-        return response()->json(['data' => $get_notice]);
+    public function updateNotificationStatus($id){
+        $updateNotificationStatus = DB::table('notice_status')->where('NoticeID',$id)->where('EmployeeID',Session::get('EmployeeID'))
+        ->update(
+            array(
+                'Desktop' =>'1',
+            )
+        );
+        return response()->json(['updateNotificationStatus'=>$updateNotificationStatus]);
     }
     
+
+
 }

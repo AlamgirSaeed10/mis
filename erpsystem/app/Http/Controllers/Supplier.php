@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class Supplier extends Controller
 {
@@ -19,11 +19,11 @@ class Supplier extends Controller
     	         'SupplierName'=>'required',
     	         'Address'=>'required',
     	         'Phone'=>'required',
-    	         'Email'=>'required',         
+    	         'Email'=>'required',
     	         'Active'=>'required',
     	         'InvoiceDueDays' => 'required',
     	       ]);
-    	
+
     	$supplierInsert = DB::table('supplier')->insert($validate);
 
         return redirect('supplierCreate')->with('success', 'Data has been submitted Successfully!');
@@ -44,7 +44,7 @@ class Supplier extends Controller
     		'SupplierName'=>$request->SupplierName,
     	    'Address'=>$request->Address,
     	    'Phone'=>$request->Phone,
-    	    'Email'=>$request->Email,         
+    	    'Email'=>$request->Email,
     	    'Active'=>$request->Active,
     	    'InvoiceDueDays' => $request->InvoiceDueDays,
     	         );

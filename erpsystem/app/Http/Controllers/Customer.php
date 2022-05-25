@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 class Customer extends Controller
 {
-    
+
     public function customerCreate(){
     	$pagetitle = "Customer";
     	$customerCreate = DB::table('party')->get();
@@ -15,7 +15,7 @@ class Customer extends Controller
     }
 
     public function customerInsert(Request $request){
-    	
+
     	$validate = $this->validate($request,[
 
 		    'PartyName' =>'required',
@@ -28,14 +28,14 @@ class Customer extends Controller
 
     	$customerInsert = DB::table('party')->insert($validate);
     	return redirect('customerCreate')->with('success',"Party / Customer added successfully!");
-    	
+
     }
     public function customerEdit($PartyID){
 
     	$customerEdit = DB::table('party')->where("PartyID", $PartyID)->get();
 
     	return view('customer.customer_edit',compact('customerEdit'));
-    	
+
     }
     public function customerUpdate(Request $request){
 
@@ -49,7 +49,7 @@ class Customer extends Controller
 		    'Active' =>$request->Active,
 		    'InvoiceDueDays' =>$request->InvoiceDueDays,
     	);
-    	
+
     	$customerUpdate = DB::table('party')->where('PartyID', $request->PartyID)->update($data);
 
     	return redirect('customerCreate')->with('success','Party / Customer updated successfully!');

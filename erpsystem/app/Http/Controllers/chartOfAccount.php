@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 class chartOfAccount extends Controller{
 
     public function index(){
@@ -111,7 +111,7 @@ class chartOfAccount extends Controller{
 	            'ChartOfAccountID' => $getID[0]->ChartOfAccountID,
 	            'CODE' => $CODE,
 	            'ChartOfAccountName' => $request->ChartOfAccountName,
-	            
+
 	            'L1' => $CODEA,
 	            'L2' => $CODEB,
 	            'L3' => $request->ChartOfAccountID,
@@ -121,12 +121,12 @@ class chartOfAccount extends Controller{
     }
    	public function EditChartOfAccountID_L1($ChartOfAccountID){
         $ChartOfAccountID_data = DB::table('chartofaccount')->where('ChartOfAccountID',$ChartOfAccountID)->get();
-        
+
        return view('chartofaccount_edit')->with('ChartOfAccountID_data',$ChartOfAccountID_data);
     }
     public function UpdateChartOfAccountID_L1(Request $request, $ChartOfAccountID){
         $validate_data = $this->validate($request, [
-        	'ChartOfAccountName' => 'required', 
+        	'ChartOfAccountName' => 'required',
         	]);
 
         $data = DB::table('chartofaccount')->where('ChartOfAccountID', '=', $ChartOfAccountID)->update($validate_data);
@@ -143,11 +143,11 @@ class chartOfAccount extends Controller{
 
     // Testing Ajax data storing in database using Datalist
 
-    public function test()
-    {
-    	return view('test');
-    	# code...
-    }
-   
+    // public function test()
+    // {
+    // 	return view('test');
+    // 	# code...
+    // }
+
 }
 

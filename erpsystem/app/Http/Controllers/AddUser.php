@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class AddUser extends Controller
 {
-   
+
     public function userCreate(){
 
         $pagetitle = "Add User";
-        $userCreate = DB::table('user')->get();
+        $userCreate = DB::table('users')->get();
         return view('adduser.adduser',compact('pagetitle','userCreate'));
     }
 
     public function userInsert(Request $request){
-
-        $validate = $this->validate($request,[
+        
+        $this->validate($request,[
             'FullName' => 'required',
             'Email' => 'required',
             'Password' => 'required',
@@ -35,18 +35,18 @@ class AddUser extends Controller
             'Active' => $request->Active,
         );
 
-        $userStore = DB::table('user')->insert($data);
+        DB::table('users')->insert($data);
         return redirect('userCreate')->with('success','User Created Successfully!');
     }
 
     public function userEdit($UserID){
         $userEdit = DB::table('user')->where("UserID",$UserID)->get();
         return view('adduser.adduser_edit',compact('userEdit'));
-        
+
     }
     public function userUpdate(Request $request){
 
-    $validate = $this->validate($request,[
+    $this->validate($request,[
         'Email' =>'required',
         'Password' =>'required',
     ]);
@@ -58,14 +58,15 @@ class AddUser extends Controller
             'UserType' => $request->UserType,
             'Active' => $request->Active,
         );
-        $userUpdate = DB::table('user')->where('UserID',$request->UserID)->update($data);
+        $userUpdate = DB::table('users')->where('UserID',$request->UserID)->update($data);
         return redirect('userCreate')->with('success',"User has been updated successfully!");
-        
+
     }
     public function userDelete($UserID){
 
-        $userDelete = DB::table('user')->where('UserID',$UserID)->delete();
+        $userDelete = DB::table('users')->where('UserID',$UserID)->delete();
         return redirect("userCreate")->with('success',"User Deleted Successfully!");
 
     }
+
 }
