@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use App\Exceptions\Handler;
+
 
 class LoginController extends Controller
 {
@@ -52,19 +51,16 @@ class LoginController extends Controller
                 Session::put('Picture', $data[0]->Picture);
                 Session::put('LoggedUser');
 
-             
-
-
-
-
-
                 if (session::get('StaffType') == 'HR') {
-                    return redirect('dashboard')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                    $pagetitle = "HR Dashboard";
+                    return redirect('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                 } elseif (session::get('StaffType') == 'GM') {
-                    return redirect('dashboard')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
-                } elseif (session::get('StaffType') == 'OM') {
+                    $pagetitle = "GM Dashboard";
 
-                    return redirect('dashboard')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                    return redirect('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                } elseif (session::get('StaffType') == 'OM') {
+                    $pagetitle = "OM Dashboard";
+                    return redirect('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                     // return redirect('showemployee')->with('error','Welcome to Extensive HR System')->with('class','success');
 
                 }
@@ -103,8 +99,10 @@ class LoginController extends Controller
                    ->join('jobtitle', 'employee.JobTitleID', 'jobtitle.JobTitleID')->where('EmployeeID','=' , session::get('EmployeeID'))
                    ->get();
                    // dd($employee);
+
+                   $pagetitle = "Employee Dashboard";
                    
-                   return view('employe_section.dashboard', compact('employee'));
+                   return view('employe_section.dashboard', compact('employee' ,'pagetitle'));
             } else {
                 return redirect('/')->withinput($request->all())->with('error', 'Invalid username or Password. Try again');
             }
