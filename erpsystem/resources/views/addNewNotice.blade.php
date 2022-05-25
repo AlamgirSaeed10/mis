@@ -1,5 +1,5 @@
-@extends('HR.hr-layout.main')
-@section('title', 'New Notice')
+@extends('template.tmp')
+@section('title', 'Users')
 @section('content')
 <head>  
 <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
@@ -35,7 +35,7 @@
          @endif
          <div class="row">
             <div class="col-12">
-               <form action = "{{url('/UploadData')}}" method = "post" class="form-group">
+               <form action = "/UploadData" method = "post" class="form-group">
                   {{csrf_field()}}
                   <div class="card">
                      <div class="card-body">

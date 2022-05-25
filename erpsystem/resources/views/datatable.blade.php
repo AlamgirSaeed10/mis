@@ -1,11 +1,6 @@
-@extends('HR.hr-layout.main')
+@extends('template.tmp')
 @section('title', 'Users')
 @section('content')
-<head>
-    {{-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-</head>
-
 <div class="main-content">
 <div class="page-content">
 <div class="container-fluid">
@@ -21,17 +16,26 @@
          </div>
       </div>
       <div>
-         <!-- end page title -->
+         @if (session('error'))
+         <div class="alert alert-danger p-3" id="success-alert">
+             {{ Session::get('error') }}
+         </div>
+         @endif
+         @if (session('success'))
+         <div class="alert alert-success p-3" id="success-alert">
+             {{ Session::get('success') }}
+         </div>
+         @endif
          @if (count($errors) > 0)
-         <div >
-            <div class="alert alert-danger pt-3 pl-0   border-3">
-               <p class="font-weight-bold"> There were some problems with your input.</p>
-               <ul>
-                  @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                  @endforeach
-               </ul>
-            </div>
+         <div class="card-body ">
+             <div class="alert alert-warning pt-3 pl-0">
+                 There were some problems with your input.
+                 <ul>
+                     @foreach ($errors->all() as $error)
+                     <li>{{ $error }}</li>
+                     @endforeach
+                 </ul>
+             </div>
          </div>
          @endif
             <div class="row">
@@ -45,7 +49,7 @@
                                  <tr>
                                     <th>#</th>
                                     <th>Title</th>
-                                    <th width="20%">Action</th>
+                                    <th width="10%">Action</th>
                                  </tr>
                               </thead>
                               <tbody> 
@@ -66,7 +70,7 @@
     $('#datatable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{url('/viewAllNotices')}}",
+        ajax: "{{'/viewAllNotices'}}",
         columns: [
             {data: 'NoticeID'},
             {data: 'Title'},
@@ -75,6 +79,17 @@
     });
     
   });
+    
+  $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
+          $("#success-alert").slideUp("slow");
+         $("#success-alert").alert('close');
+         });
+
+         $("#alert-danger").fadeTo(4000, 500).slideUp(100, function(){
+          $("#alert-danger").slideUp("slow");
+         $("#alert-danger").alert('close');
+         });
+
 </script>
 
 @endsection

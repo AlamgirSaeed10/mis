@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main') @section('content')
+@extends('template.tmp') @section('content')
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">

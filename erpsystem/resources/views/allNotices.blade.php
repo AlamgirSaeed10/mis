@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main')
+@extends('template.tmp')
 @section('title', 'Users')
 @section('content')
 <head>
@@ -53,11 +53,11 @@
                            <table class="table table-hover table-sm mb-0">
                               <thead>
                                  <tr>
-                                    <th>#</th>
-                                    <th>Employee ID</th>
-                                    <th>Employee Name</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
+                                    <th width="5%">#</th>
+                                    <th width="5%">Employee ID</th>
+                                    <th width="35%">Employee Name</th>
+                                    <th width="10%">Date</th>
+                                    <th width="5%">Status</th>
                                  </tr>
                               </thead>
                               <tbody> 
