@@ -1,0 +1,25 @@
+Todays report:
+-Worked on leave module in erp system.
+-Added model for updating leave status by HR.
+-Generated csv file for customer sale record.
+
+
+
+
+
+E:\localhost\php
+
+
+Method:Get
+Url:https://haidermartstore.cm4b.org/wp-json/wc/v3/products?featured=true
+
+
+haidermart #83b735
+
+-Given traning to zahid sab for pos and general web development.
+-worked on changing datatable search functionality of totex pos.
+-Worked on fixing edit sale module of totex pos.
+-Fixed invoice of totex pos.
+-Given traning to new islamabad salesman.
+-Added new module of other cash ot noorcorporation POS.
+-Added new module of daily sale with all parameters in noorcorporation POS.
