@@ -10,6 +10,12 @@ use App\Exceptions\Handler;
 
 class LoginController extends Controller
 {
+     function index()
+    {
+        $pagetitle = "Shah CRM";
+        return view('welcome',compact("pagetitle"));
+    }
+
     function login()
     {
         return view('auth.login');
