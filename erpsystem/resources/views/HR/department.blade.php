@@ -53,7 +53,7 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4">Departments</h4>
                             <div class="table-responsive">
-                                <table class="table align-middle table-nowrap mb-0">
+                                <table class="table dt-responsive table-sm table-striped align-middle table-nowrap mb-0">
                                     <tbody>
                                         <tr>
                                             <th scope="col">S.No</th>

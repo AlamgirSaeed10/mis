@@ -1,6 +1,6 @@
 @extends('HR.hr-layout.main')
 
-@section('title', 'HR')
+@section('title', 'JobTitle')
 
 
 @section('content')
@@ -54,7 +54,7 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4">List of Job Titles</h4>
                             <div class="table-responsive">
-                                <table class="table align-middle table-nowrap mb-0">
+                                <table class="table dt-responsive table-sm table-striped nowrap w-100">
                                     <tbody>
                                         <tr>
                                             <th scope="col">S.No</th>

@@ -24,7 +24,8 @@ class EmployeeController extends Controller
     function add_department(Request $request)
     {
         $this->validate($request, [
-            'departmentname' => 'required|max:30',
+            'departmentname' => 'required|max:30|unique:department',
+
         ]);
 
         $department = $request->departmentname;
@@ -63,10 +64,10 @@ class EmployeeController extends Controller
     function add_educationlevels(Request $request)
     {
         $this->validate($request, [
-            'educationlevel' => 'required|max:30',
+            'EducationLevelName' => 'required|max:30|unique:educationlevel',
         ]);
 
-        $educationlevel = $request->educationlevel;
+        $educationlevel = $request->EducationLevelName;
         DB::table('educationlevel')->insert([
             'EducationLevelName' => $educationlevel
         ]);
@@ -106,7 +107,7 @@ class EmployeeController extends Controller
     function addstafftype(Request $request)
     {
         $this->validate($request, [
-            'stafftype' => 'required|max:30',
+            'stafftype' => 'required|max:30||unique:staff_type',
         ]);
         $stafftype = $request->stafftype;
         DB::table('staff_type')->insert([
@@ -146,7 +147,7 @@ class EmployeeController extends Controller
     function addtitle(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:30',
+            'title' => 'required|max:30|unique:title',
         ]);
         $title = $request->title;
         DB::table('title')->insert([
@@ -230,7 +231,14 @@ class EmployeeController extends Controller
 
         function addemployee(Request $request)
         {
-         
+
+         $this->validate($request, [
+            'CNIC' => 'required|max:30||unique:employee',
+        ],
+        [
+             'CNIC.unique' => 'This CNIC already exists ',
+        ]
+    );
             // dd($request);
            
             $data['IsSupervisor']=$request->IsSupervisor;    
@@ -240,6 +248,7 @@ class EmployeeController extends Controller
             $data['FirstName']=$request->FirstName;
             $data['MiddleName']=$request->MiddleName;
             $data['LastName']=$request->LastName;
+            $data['CNIC']=$request->Cnic;
             $data['DateOfBirth']=$request->DateOfBirth;
             $data['Gender']=$request->Gender;
             $data['Email']=$request->Email;
@@ -334,6 +343,7 @@ class EmployeeController extends Controller
                     'FirstName' => $request->FirstName,
                     'MiddleName' => $request->MiddleName,
                     'LastName' => $request->LastName,
+                    'CNIC' =>$request->CNIC,
                     'DateOfBirth' => $request->DateOfBirth,
                     'Gender' => $request->Gender,
                     'Email' => $request->Email,

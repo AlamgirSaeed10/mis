@@ -41,7 +41,6 @@ class LoginController extends Controller
                 ->where('Password', '=', $password)
                 ->where('Active', '=', 'Y')
                 ->get();
-                // dd($data);
             if (count($data) > 0) {
                 Session::put('FullName', $data[0]->FirstName);
                 Session::put('EmployeeID', $data[0]->EmployeeID);
@@ -53,14 +52,15 @@ class LoginController extends Controller
 
                 if (session::get('StaffType') == 'HR') {
                     $pagetitle = "HR Dashboard";
-                    return redirect('dashboard')->with('pagetitle')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                // dd($pagetitle);
+                    return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                 } elseif (session::get('StaffType') == 'GM') {
                     $pagetitle = "GM Dashboard";
 
-                    return redirect('dashboard')->with('pagetitle')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                    return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                 } elseif (session::get('StaffType') == 'OM') {
                     $pagetitle = "OM Dashboard";
-                    return redirect('dashboard')->with('pagetitle')->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
+                    return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                     // return redirect('showemployee')->with('error','Welcome to Extensive HR System')->with('class','success');
 
                 }

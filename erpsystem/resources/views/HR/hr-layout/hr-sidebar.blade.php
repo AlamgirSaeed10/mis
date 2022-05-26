@@ -4,7 +4,7 @@
 
             <ul class="list-unstyled categories-list">
                 <li>
-                    <a href="" class="text-body d-flex align-items-center">
+                    <a href="{{ URL('/dashboard')}}" class="text-body d-flex align-items-center">
                         <i class="mdi mdi-speedometer-slow font-size-16 text-muted me-2"></i> <span
                             class="me-auto">Dashboard</span>
                     </a>

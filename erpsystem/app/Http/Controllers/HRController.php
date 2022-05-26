@@ -164,7 +164,7 @@ class HRController extends Controller
     function add_allowance(Request $request)
     {
         $this->validate($request, [
-            'AllowanceTitle' => 'required|max:30',
+            'AllowanceTitle' => 'required|max:30|unique:allowance_list',
 
         ]);
 
@@ -180,7 +180,7 @@ class HRController extends Controller
     public function Deleteallowance($AllowanceListID)
     {
         DB::delete('delete from allowance_list where AllowanceListID  = ?', [$AllowanceListID]);
-        return redirect()->back()->with('error', 'Allowance Deleted successfully')->with('class', 'danger');;
+        return redirect()->back()->with('error', 'Allowance Deleted successfully')->with('class', 'danger');
     }
     function edit_allowance($AllowanceListID)
     {
@@ -328,7 +328,7 @@ class HRController extends Controller
     function LeaveTypeadd(Request $request)
     {
         $this->validate($request, [
-            'LeaveTypeTitle' => 'required|max:30',
+            'LeaveTypeTitle' => 'required|max:30|unique:leavetype',
 
         ]);
 

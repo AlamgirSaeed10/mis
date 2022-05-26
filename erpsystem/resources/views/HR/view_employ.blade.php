@@ -98,6 +98,10 @@
                                                 <td class="fw-bold">Last Name</td>
                                                 <td>{{ $employee[0]->LastName }}</td>
                                             </tr>
+                                            <tr>
+                                                <td class="fw-bold">CNIC</td>
+                                                <td>{{ $employee[0]->CNIC }}</td>
+                                            </tr>
 
                                             <?php
 
@@ -131,7 +135,7 @@
                                                 <td>{{ $employee[0]->Nationality }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="fw-bold">MobileNo</td>
+                                                <td class="fw-bold">Mobile No</td>
                                                 <td>{{ $employee[0]->MobileNo }}</td>
                                             </tr>
                                             <tr>

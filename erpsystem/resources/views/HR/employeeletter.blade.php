@@ -20,7 +20,7 @@
               <div class="page-title-right">
                 <!-- button will appear here -->
 
-                <a href="" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
+                <a href="{{ url('employee')}}" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 
               </div>
             </div>
@@ -62,7 +62,9 @@
             <input type="hidden" name="employeeid" value="{{ $employee[0]->EmployeeID }}">
             <div class="card ">
               <div class="card-body card-body border-secondary border-top border-1 rounded-top">
-                <h4 class="card-title ">Select Letter Template</h4>
+                <h4 class="card-title ">Select Leter Template</h4>
+
+                
                 <table class="table table-sm m-0 table-striped">
                   <thead>
                     <tr>
@@ -82,6 +84,8 @@
                     @endforeach
                   </tbody>
                 </table>
+               
+
                 <hr>
                 <input type="submit" name="Submit" value="Preview Letter" class="btn btn-primary btn-sm mt-3 w-md" />
               </div>
@@ -94,6 +98,7 @@
                 <div class="card-body card-body border-primary border-top border-1 rounded-top">
                   <h4 class="card-title ">Issued Letter</h4>
                   <p class="card-title-desc"> </p>
+                    @if (count($letter) > 0)
                   <table class="table table-hover align-middle table-sm table-nowrap mb-0">
                     <thead class="table-light">
                       <tr>
@@ -128,6 +133,11 @@
                       @endforeach
                     </tbody>
                   </table>
+                  @endif
+                  
+                                      @if (count($letter) == 0)
+                            <p class="text-danger">No Leaves</p>
+                            @endif
                 </div>
               </div>
             </div>

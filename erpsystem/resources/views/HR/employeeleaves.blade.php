@@ -20,7 +20,7 @@
                             <div class="page-title-right">
                                 <!-- button will appear here -->
 
-                                <a href="{{ URL('/Employee') }}" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
+                                <a href="{{ URL('/employee') }}" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 
                             </div>
                         </div>
@@ -54,32 +54,7 @@
                     </div>
 
                     @endif
-<!-- 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="media">
-                                        <div class="me-3">
-                                            @if ($employee[0]->Picture == null)
-                                            <td> No Image </td>
-                                            @else
-                                            <td> <img src="{{ asset('employee_pictures') }}/{{ $employee[0]->Picture }}" style="height:50px; width:50px"> </td>
-                                            @endif
 
-                                        </div>
-                                        <div class="media-body align-self-center">
-                                            <div class="text-muted">
-                                                <h5></h5>
-                                                <p class="mb-1">{{ $employee[0]->FirstName }} {{ $employee[0]->LastName }} <span class="badge badge-soft-success font-size-11 me-2 ml-5">
-                                                        Permanent </span> </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                     @include('HR.hr-layout.nav')
 
@@ -88,6 +63,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Leaves</h4>
+                                      @if (count($leaves) > 0)
                                     <div class="table-responsive">
                                         <table class="table align-middle table-nowrap mb-0">
                                             <tbody>
@@ -166,6 +142,11 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    @endif
+
+                                      @if (count($leaves) == 0)
+                            <p class="text-danger">No Leaves</p>
+                            @endif
                                 </div>
                                 <!-- end card body -->
                             </div>

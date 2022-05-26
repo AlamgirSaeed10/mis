@@ -72,7 +72,7 @@ class WorkController extends Controller
     function add_leave_status(Request $request)
     {
         $this->validate($request, [
-            'LeaveStatus' => 'required|max:30',
+            'LeaveStatus' => 'required|max:30|unique:leave_status',
         ]);
 
         $Leavestatus = $request->LeaveStatus;

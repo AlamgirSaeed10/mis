@@ -26,6 +26,7 @@
                         <div class="card-body">
                             <form action="{{route('update_allowance')}}" method="post">
                                 @csrf
+                                <div class="row">
                                 <div class="col-md-4">
                                     <input type="hidden" class="form-control" name="AllowanceID" value='{{ $AllowanceList[0]->AllowanceListID;}}' id="formrow-firstname-input" placeholder="Enter Allowance Title">
 
@@ -38,6 +39,21 @@
                                             @enderror
                                         </span>
                                     </div>
+                                </div>
+                                 <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="basicpill-firstname-input">Category <span class="text-danger">*</span></label>
+                                            <select name="AllowanceCategory"  class="form-select">
+                                               
+                                                <option value="Dr"  @if($AllowanceList[0]->AllowanceCategory == 'Dr') selected
+                                                    @endif>Dr</option>
+                                                <option value="Cr" @if($AllowanceList[0]->AllowanceCategory == 'Cr') selected
+                                                    @endif>Cr</option>
+    
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div>
                                     <button type="submit" class="btn btn-success w-md">Submit</button>
