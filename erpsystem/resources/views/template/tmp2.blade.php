@@ -54,6 +54,7 @@
 
     <div id="layout-wrapper">
         @yield('content')
+        {{-- @include('template.footer') --}}
     </div>
 
 
