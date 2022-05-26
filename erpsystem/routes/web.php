@@ -255,73 +255,71 @@ Route::get('/PettyCash' , [WorkController::class, 'PettyCash'])->name('PettyCash
 
 
 // *********************************************** [ Alamgir ]***********************************************************
+Route::get('/dashboard', function () {
+$pagetitle = '';
+return view('dashboard',compact('pagetitle'));});
 
+Route::get('addNewNotice', [NoticeBoardController::class,'addNewNotice']);
+Route::post('UploadData', [NoticeBoardController::class,'saveNoticeInDB']);
+Route::get('datatable', [NoticeBoardController::class,'datatable']);
+Route::get('viewAllNotices', [NoticeBoardController::class,'viewAllNotices']);
+Route::get('getAllNotice/{id}', [NoticeBoardController::class,'getAllNotice']);
+Route::get('getNotification/{id}', [NoticeBoardController::class,'getNotification']);
+Route::get('sendNotification', [NoticeBoardController::class,'sendNotification']);
+Route::get('deleteNotice/{id}',[NoticeBoardController::class,'deleteNotice']);
+Route::get('totalNoticeCount}',[NoticeBoardController::class,'totalNoticeCount']);
 
+Route::post('logincheck', [LoginController::class,'logincheck']);
+Route::get('logout', [LoginController::class,'logout']);
 
-
-Route::get('addNewNotice', [NoticeBoardController::Class ,'addNewNotice']);
-Route::get('datatable', [NoticeBoardController::Class ,'datatable']);
-Route::get('viewAllNotices', [NoticeBoardController::Class ,'viewAllNotices']);
-Route::get('getAllNotice/{id}', [NoticeBoardController::Class ,'getAllNotice']);
-Route::post('UploadData', [NoticeBoardController::Class ,'saveNoticeInDB']);
-// Route::post('logincheck', 'LoginController@logincheck');
-// Route::get('logout', 'LoginController@logout');
 // notification
-Route::get('fetch_notifications', [DashboardController::Class,'fetch_notifications']);
-Route::get('getNotification', [DashboardController::Class,'getNotification']);
-Route::get('getRelatedNotice/{id}', [DashboardController::Class,'getRelatedNotice']);
-Route::get('updateNoticeStatus/{id}', [DashboardController::Class,'updateNoticeStatus']);
+
+Route::get('fetch_notifications', [DashboardController::class,'fetch_notifications']);
+Route::get('getRelatedNotice/{id}', [DashboardController::class,'getRelatedNotice']);
+Route::get('updateNoticeStatus/{id}', [DashboardController::class,'updateNoticeStatus']);
+Route::get('updateNotificationStatus/{id}', [DashboardController::class,'updateNotificationStatus']);
 
 
 // chart of account
-Route::get('chartofaccount',[chartOfAccount::Class,'index']);
-Route::post('SaveChartOfAccount',[chartOfAccount::Class,'StoreChartOfAccountID_L1']);
-Route::post('SaveChartOfAccount_l2',[chartOfAccount::Class,'StoreChartOfAccountID_L2']);
+Route::get('chartofaccount',[chartOfAccount::class,'index']);
+Route::post('SaveChartOfAccount',[chartOfAccount::class,'StoreChartOfAccountID_L1']);
+Route::post('SaveChartOfAccount_l2',[chartOfAccount::class,'StoreChartOfAccountID_L2']);
 
-Route::get('EditChartOfAccountID_L1/{ChartOfAccountID}', [chartOfAccount::Class,'EditChartOfAccountID_L1'])->name('EditChartOfAccountID_L1.show');
-Route::get('UpdateChartOfAccountID_L1/{ChartOfAccountID}', [chartOfAccount::Class,'UpdateChartOfAccountID_L1']);
-Route::get('DeleteChartOfAccountID/{ChartOfAccountID}',[chartOfAccount::Class,'DeleteChartOfAccountID']);
+Route::get('EditChartOfAccountID_L1/{ChartOfAccountID}', [chartOfAccount::class,'EditChartOfAccountID_L1'])->name('EditChartOfAccountID_L1.show');
+Route::get('UpdateChartOfAccountID_L1/{ChartOfAccountID}', [chartOfAccount::class,'UpdateChartOfAccountID_L1']);
+Route::get('DeleteChartOfAccountID/{ChartOfAccountID}',[chartOfAccount::class,'DeleteChartOfAccountID']);
 
-
-
-
-// Testing Ajax Request and storing in database using datalist
-Route::get('test', [chartOfAccount::Class,'test']);
 // ====================================END AJAX========================================
-
+Route::get('test', [chartOfAccount::class,'test']);
 
 
 // ===================================Supplier module================================================= 
 
-Route::get('supplierCreate', [Supplier::Class,'supplierCreate']);
-Route::post('supplierInsert', [Supplier::Class,'supplierInsert']);
-Route::get('supplierEdit/{SupplierID}', [Supplier::Class,'supplierEdit']);
-Route::post('supplierUpdate', [Supplier::Class,'supplierUpdate']);
-Route::get('supplierDelete/{SupplierID}',[Supplier::Class,'supplierDelete']);
+Route::get('supplierCreate', [Supplier::class,'supplierCreate']);
+Route::post('supplierInsert', [Supplier::class,'supplierInsert']);
+Route::get('supplierEdit/{SupplierID}', [Supplier::class,'supplierEdit']);
+Route::post('supplierUpdate', [Supplier::class,'supplierUpdate']);
+Route::get('supplierDelete/{SupplierID}',[Supplier::class,'supplierDelete']);
 
 // ===================================Customer module================================================= 
 
-Route::get('customerCreate',[Customer::Class,'customerCreate']);
-Route::post('customerInsert',[Customer::Class,'customerInsert']);
-Route::get('customerEdit/{PartyID}', [Customer::Class,'customerEdit']);
-Route::post('customerUpdate', [Customer::Class,'customerUpdate']);
-Route::get('customerDelete/{PartyID}', [Customer::Class,'customerDelete']);
-
-// ===================================Add User module================================================= 
-
-Route::get('userCreate',[AddUser::Class,'userCreate']);
-Route::post('userInsert', [AddUser::Class,'userInsert']);
-Route::get('userEdit/{UserID}', [AddUser::Class,'userEdit']);
-Route::post('userUpdate', [AddUser::Class,'userUpdate']);
-Route::get('userDelete/{UserID}', [AddUser::Class,'userDelete']);
+Route::get('customerCreate',[Customer::class,'customerCreate']);
+Route::post('customerInsert',[Customer::class,'customerInsert']);
+Route::get('customerEdit/{PartyID}', [Customer::class,'customerEdit']);
+Route::post('customerUpdate', [Customer::class,'customerUpdate']);
+Route::get('customerDelete/{PartyID}', [Customer::class,'customerDelete']);
 
 // =================================== User Profile ================================================= 
 
-Route::get('userProfile', [Profile::Class,'userProfile']);
-// Route::get('userProfileEdit/{UserID}', [Profile::Class,'userProfileEdit']);
-Route::post('userProfileUpdate', [Profile::Class,'userProfileUpdate']);
+Route::get('userProfile', [Profile::class,'userProfile']);
+Route::post('userProfileUpdate', [Profile::class,'userProfileUpdate']);
 
 
-Route::get('/Item',[HRController::class,'Item']);
-Route::get('/Voucher',[HRController::class,'Voucher']);
-Route::get('/JournalVoucher',[HRController::class,'Journal_Voucher']);
+
+// =================================== Sales Module ================================================= 
+
+Route::get('test',[SalesController::class,
+'CreateSales']);
+
+
+

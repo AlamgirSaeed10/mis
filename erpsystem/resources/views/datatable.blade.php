@@ -43,8 +43,8 @@
                 <div class="card">
                 <div class="card-body">
                         <h4 class="card-title pb-3">Manage Users</h4>
-                        <div class="table-responsive">
-                           <table class="table table-hover table-sm mb-0" id="datatable">
+                        <div class="">
+                           <table class="table dt-responsive table-sm table-striped align-middle table-nowrap mb-0" id="datatable">
                               <thead>
                                  <tr>
                                     <th>#</th>

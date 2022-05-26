@@ -42,8 +42,9 @@ class NoticeBoardController extends Controller
         return DataTables::of($get_employeID)->addIndexColumn()->addColumn('action', function ($row)
         {
 
-            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit btn btn-info btn-sm"><i class="mdi mdi-eye-check-outline"></i></a> ';
-            $btn = $btn . '<a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit btn btn-danger btn-sm"><i class="mdi mdi-trash-can"></i></a>';
+            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit text-info btn-md"><i class="mdi mdi-eye-check-outline" style="font-size:20px;></i></a> ';
+            $btn = $btn . '<a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit text-danger btn-md">
+            <i class="mdi mdi-trash-can" style="font-size:20px; color:red;"></i></a>';
 
 
             return $btn;

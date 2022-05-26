@@ -14,8 +14,6 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL('/')}}/assets/images/favicon.ico">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
         <!-- Bootstrap Css -->
         <link href="{{URL('/')}}/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -31,21 +29,15 @@
         <!-- Responsive datatable examples -->
         <link href="{{URL('/')}}/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         <!-- Sweet Alert-->
-        <link href="{{URL('/')}}/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-
-           <link href="{{URL('/')}}/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
-         <link rel="stylesheet" href="{{URL('/')}}/assets/libs/%40chenfengyuan/datepicker/datepicker.min.css">
-
-        <link rel="stylesheet" type="text/css" href="{{URL('/')}}/assets/libs/toastr/build/toastr.min.css">
-
- 
-        <!-- Responsive datatable examples -->
- 
+        <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
    <script type="text/javascript">
 
-
+$("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
+    // $("#success-alert").slideUp(500);
+    $("#success-alert").alert('close');
+});
     
 
     function delete_confirm(url_plus_id) {
@@ -72,45 +64,9 @@
             document.getElementById('delete_link').setAttribute('href' , url);
          
     }
-
-
-  function cal(id)
-     {
-        var Bonus = document.getElementById('Bonus'+id).value;
-        var Grand = document.getElementById('GrandOld'+id).value;
-        var GrandOld = document.getElementById('GrandOld'+id).value;
-
- 
-        if (Bonus == '') {
-
-          // Bonus = 0.1;
-           //alert(Bonus);
-           // var Total = parseInt(Bonus) + parseInt(Grand);
-           $('#Grand'+id).val(    parseFloat(GrandOld)       );
-           $('#Bonus'+id).val(    0      );
-        }
-        else
-        {
-            //alert(0.2);
-           var Total=0;
-           Total = parseInt(Bonus) + parseInt(GrandOld);
-           $('#Grand'+id).val(     parseInt(Total).toFixed(2)     );
-           
-        }
-      
-       if (Bonus == 0) 
-        {
-            // alert(0.2);
-           var Total=0;
-           $('#Grand'+id).val(    parseFloat(GrandOld)       );
-           $('#Bonus'+id).val(    0      );
-           
-        }
-     }
-
-
     </script>
- 
+
+
 
 
 
@@ -154,7 +110,7 @@
             <!-- end of header -->
 
             <!-- ========== Left Sidebar Start ========== -->
-             @include('template.sidebar')
+             @include('template.om_sidebar')
             <!-- Left Sidebar End -->
 
             
@@ -182,7 +138,7 @@
         <script src="{{URL('/')}}/assets/libs/node-waves/waves.min.js"></script>
 
         <!-- apexcharts -->
-        {{-- <script src="{{URL('/')}}/assets/libs/apexcharts/apexcharts.min.js"></script> --}}
+        <script src="{{URL('/')}}/assets/libs/apexcharts/apexcharts.min.js"></script>
 
         <!-- dashboard init -->
         <script src="{{URL('/')}}/assets/js/pages/dashboard.init.js"></script>
@@ -242,39 +198,9 @@
 
         <script src="{{URL('/')}}/assets/js/pages/form-repeater.int.js"></script>
 
-
-                <script src="{{URL('/')}}/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-         <script src="{{URL('/')}}/assets/libs/%40chenfengyuan/datepicker/datepicker.min.js"></script>
-
-<script src="{{URL('/')}}/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="{{URL('/')}}/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
-        <!-- Datatable init js -->
-        <script src="{{URL('/')}}/assets/js/pages/datatables.init.js"></script>
-
         
-               <!-- Required datatable js -->
-        <script src="{{URL('/')}}/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="{{URL('/')}}/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <!-- Buttons examples -->
-        <script src="{{URL('/')}}/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="{{URL('/')}}/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-        <!-- toastr plugin -->
-        <script src="{{URL('/')}}/assets/libs/toastr/build/toastr.min.js"></script>
-
-        <!-- toastr init -->
-        <script src="{{URL('/')}}/assets/js/pages/toastr.init.js"></script>
-
-
     </body>
 
-
-<script>
-    $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
-     $("#success-alert").slideUp(500);
-    $("#success-alert").alert('close');
-});
-</script>
 
 <!-- Mirrored from themesbrand.com/skote-django/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 May 2021 18:22:06 GMT -->
 </html>
