@@ -1,6 +1,6 @@
 
 
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 
 @section('title', 'Loan')
 
@@ -20,7 +20,7 @@
                             <div class="page-title-right">
                                 <!-- button will appear here -->
 
-                                <a href="{{ URL('/Employee') }}"
+                                <a href="{{ URL('/employeeprofile') }}"
                                     class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i
                                         class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 
@@ -57,7 +57,7 @@
 
                     @endif
 
-                    @include('employe_section.layout.employeenav')
+                    @include('template.employeenav')
 
 
                     <div class="card">
@@ -167,22 +167,6 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> © ShahCorporation.
-            </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                    Design & Develop by Teqholic
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
 
 

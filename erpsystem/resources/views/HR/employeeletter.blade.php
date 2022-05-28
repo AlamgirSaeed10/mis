@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main')
+@extends('template.hr_tmp')
 
 @section('title', 'Employee Letter')
 
@@ -143,7 +143,7 @@
             </div>
           </div>
         </div>
-        @include('HR.hr-layout.hr-sidebar')
+        @include('template.hr-rightsidebar')
       </div>
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

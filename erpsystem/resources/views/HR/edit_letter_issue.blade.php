@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.hr_tmp')
 
 @section('title', 'Manage Letters')
 

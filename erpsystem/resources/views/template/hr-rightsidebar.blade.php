@@ -1,4 +1,4 @@
-<div class="col-xl-3">
+<div class="col-xl-3  col-lg-3 col-md-3">
     <div class="card">
         <div class="card-body p-4">
 
@@ -65,7 +65,7 @@
                         <span class="me-auto">Deposit</span>
                     </a>
                 </li> --}}
-
+{{-- 
                 <li>
                     <a href="{{ url('/salary')}}/email" class="text-body d-flex align-items-center">
                         <i
@@ -82,7 +82,7 @@
                                   font-size-18 text-muted me-2"></i>
                         <span class="me-auto">Salary Slip</span>
                     </a>
-                </li>
+                </li> --}}
                 <!--   <li>
                                             <a href="javascript: void(0);" class="text-body d-flex align-items-center">
                                                 <i class="mdi mdi-cog text-muted font-size-16 me-2"></i> <span class="me-auto">Setting</span><span class="badge bg-success rounded-pill ms-2">01</span>

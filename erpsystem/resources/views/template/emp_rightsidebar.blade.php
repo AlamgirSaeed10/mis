@@ -4,7 +4,7 @@
 
                                     	<ul class="list-unstyled categories-list">
                                                           <li>
-                                                            <a href="{{URL('/EmployeeDetail')}}" class="text-body d-flex align-items-center">
+                                                            <a href="{{URL('/dashboard')}}" class="text-body d-flex align-items-center">
                                                                 <i class="mdi mdi-speedometer-slow font-size-16 text-muted me-2"></i> <span class="me-auto">Dashboard</span> 
                                                             </a>
                                                         </li>
@@ -22,12 +22,12 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="/Emp_letter" class="text-body d-flex align-items-center">
+                                                            <a href="{{URL('/EmployeeLetters')}}" class="text-body d-flex align-items-center">
                                                                 <i class="mdi mdi-file-document font-size-18 me-2 text-muted "></i> <span class="me-auto">Letter</span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="/" class="text-body d-flex align-items-center">
+                                                            <a href="{{URL('/Leave')}}" class="text-body d-flex align-items-center">
                                                                 <i class="mdi mdi-calendar-cursor
  font-size-16 me-2"></i> <span class="me-auto">Leave</span> <i class="mdi mdi-circle-medium text-danger ms-2"></i>
                                                             </a>
@@ -56,12 +56,6 @@
                                                             <a href="{{URL('/EmployeeTeam')}}" class="text-body d-flex align-items-center">
                                                                 <i class="mdi mdi-account-supervisor-circle
  font-size-18 text-muted me-2"></i> <span class="me-auto">Supervising</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/email" class="text-body d-flex align-items-center">
-                                                                <i class="mdi mdi-account-supervisor-circle
- font-size-18 text-muted me-2"></i> <span class="me-auto">Mail Sent</span>
                                                             </a>
                                                         </li>
                                                       <!--   <li>
@@ -170,4 +164,3 @@
                                 </div>
                                 <!-- end card -->
                             </div>
-                            

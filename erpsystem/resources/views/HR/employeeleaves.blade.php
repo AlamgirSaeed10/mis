@@ -1,4 +1,4 @@
-@extends('HR.HR-layout.main')
+@extends('template.hr_tmp')
 
 @section('title', 'Employee Leaves')
 
@@ -116,10 +116,10 @@
                                                     <td scope="col">{{ $leave->HRStatus }}</td>
                                                     <?php
 
-                                                    $install_date = $leave->HRStatusDate;
-                                                    $install_date = date("d-M-Y", strtotime($install_date));
+                                                    $hrstatusdate = $leave->HRStatusDate;
+                                                    $statusdate= ( $hrstatusdate==null) ? null :  date("d/m/Y", strtotime($hrstatusdate) );
                                                     ?>
-                                                    <td scope="col">{{ $install_date }}</td>
+                                                    <td scope="col">{{ $statusdate }}</td>
 
 
                                                     <td>
@@ -159,7 +159,7 @@
                 </div>
                 <!-- end col -->
 
-                @include('HR.hr-layout.hr-sidebar')
+                @include('template.hr-rightsidebar')
 
 
 

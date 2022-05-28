@@ -248,7 +248,7 @@ class EmployeeController extends Controller
             $data['FirstName']=$request->FirstName;
             $data['MiddleName']=$request->MiddleName;
             $data['LastName']=$request->LastName;
-            $data['CNIC']=$request->Cnic;
+            $data['CNIC']=$request->CNIC;
             $data['DateOfBirth']=$request->DateOfBirth;
             $data['Gender']=$request->Gender;
             $data['Email']=$request->Email;

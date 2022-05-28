@@ -1,4 +1,5 @@
-@extends('template.tmp') @section('content')
+@extends('template.hr_tmp')
+ @section('content')
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">

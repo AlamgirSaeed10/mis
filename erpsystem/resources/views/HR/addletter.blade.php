@@ -1,6 +1,6 @@
-@extends('HR.hr-layout.main')
+@extends('template.hr_tmp')
 
-@section('title', 'Home')
+@section('title', 'Letters')
 
 
 @section('content')

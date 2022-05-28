@@ -1,10 +1,10 @@
-<div class="col-xl-3">
+<div class="col-xl-3 col-md-3">
     <div class="card">
         <div class="card-body p-4">
 
             <ul class="list-unstyled categories-list">
                 <li>
-                    <a href="" class="text-body d-flex align-items-center">
+                    <a href="{{ url('/employeeprofile')}}" class="text-body d-flex align-items-center">
                         <i class="mdi mdi-speedometer-slow font-size-16 text-muted me-2"></i> <span
                             class="me-auto">Dashboard</span>
                     </a>
@@ -43,20 +43,19 @@
                         <i
                             class="mdi mdi-calendar-cursor
                                   font-size-16 me-2"></i>
-                        <span class="me-auto">Leave</span> <i
-                            class="mdi mdi-circle-medium text-danger ms-2"></i>
+                        <span class="me-auto">Leave</span> 
                     </a>
                 </li>
                
-                <li>
-                    <a href="{{ url('/EmployeeWarningLetter')}}}}" class="text-body d-flex align-items-center">
+                {{-- <li>
+                    <a href="{{ url('/EmployeeWarningLetter')}}" class="text-body d-flex align-items-center">
                         <i
                             class="bx bxs-error-circle
 
                                       text-muted font-size-18 me-2"></i>
                         <span class="me-auto">Warnings</span>
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li>
                     <a href="" class="text-body d-flex align-items-center">
                         <i
@@ -66,7 +65,7 @@
                     </a>
                 </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="/email" class="text-body d-flex align-items-center">
                         <i
                             class="mdi mdi-account-supervisor-circle
@@ -82,7 +81,7 @@
                                   font-size-18 text-muted me-2"></i>
                         <span class="me-auto">Salary Slip</span>
                     </a>
-                </li>
+                </li> --}}
                 <!--   <li>
                                             <a href="javascript: void(0);" class="text-body d-flex align-items-center">
                                                 <i class="mdi mdi-cog text-muted font-size-16 me-2"></i> <span class="me-auto">Setting</span><span class="badge bg-success rounded-pill ms-2">01</span>

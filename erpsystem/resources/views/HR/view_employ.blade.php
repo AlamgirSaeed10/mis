@@ -31,7 +31,7 @@
             <!-- end page title -->
 
             <div class="row">
-                <div class="col-xl-9">
+                <div class="col-xl-9 col-lg-9 col-md-9 ">
                     @if (session('error'))
                     <div class="alert alert-{{ Session::get('class') }} p-3 ">
 
@@ -105,8 +105,9 @@
 
                                             <?php
 
+
                                             $dob=  $employee[0]->DateOfBirth;
-                                           $dateofbirth= ( $dob==null) ? null :  date("d/m/Y", strtotime($dob) )
+                                           $dateofbirth= ( $dob==null) ? null :  date("d/m/Y", strtotime($dob) );
                                           
                                           
                                             ?>
@@ -426,27 +427,11 @@
                     </form>
                     <!-- end card -->
                 </div>
-                @include('HR.hr-layout.hr-sidebar')
+                @include('template.hr-rightsidebar')
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © ShahCorporation.
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-end d-none d-sm-block">
-                        Design & Develop by Teqholic
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
+   
 
 
 

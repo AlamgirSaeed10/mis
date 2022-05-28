@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 @section('title', 'Warning Letter')
 @section('content')
 

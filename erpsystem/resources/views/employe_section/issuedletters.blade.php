@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 
 @section('title', 'Employee Letter')
 
@@ -20,7 +20,7 @@
                 <div class="page-title-right">
                   <!-- button will appear here -->
   
-                  <a href="" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
+                  <a href="{{ URL('/employeeprofile') }}" class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
   
                 </div>
               </div>
@@ -55,7 +55,7 @@
             </div>
             @endif
           
-            @include('employe_section.layout.employeenav')
+            @include('template.employeenav')
   
   
          

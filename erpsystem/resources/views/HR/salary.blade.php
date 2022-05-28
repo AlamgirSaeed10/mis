@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main')
+@extends('template.hr_tmp')
 @section('title', 'Employee Salary')
 @section('content')
 
@@ -198,7 +198,7 @@
                 </div>
                 <!-- end col -->
 
-                @include('HR.hr-layout.hr-sidebar')
+                @include('template.hr-rightsidebar')
 
 
 

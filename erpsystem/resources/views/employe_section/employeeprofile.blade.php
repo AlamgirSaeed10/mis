@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 
 @section('title', 'Profile')
 
@@ -20,7 +20,7 @@
                                 <div class="page-title-right">
                                     <!-- button will appear here -->
 
-                                    <a href="{{ URL('/Employee') }}"
+                                    <a href="{{ URL('/employeeprofile') }}"
                                         class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i
                                             class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 
@@ -33,7 +33,7 @@
                 <!-- end page title -->
 
                 <div class="row">
-                    <div class="col-xl-9">
+                    <div class="col-xl-9 col-md-9">
                         @if (session('error'))
                             <div class="alert alert-{{ Session::get('class') }} p-3 ">
 
@@ -56,7 +56,8 @@
                             </div>
 
                         @endif
-                        @include('employe_section.layout.employeenav')
+                        
+                        @include('template.employeenav')
 
 
                         <form action="{{ URL('/EmployeeUpdate') }}" method="post" enctype="multipart/form-data">
@@ -105,10 +106,11 @@
                                                 <tr>
                                                     <td class="fw-bold">Date of Birth</td>
                                                     <?php
-                                               $e_date_formaated = $employee[0]->DateOfBirth;
-                                               $dob=date("d/m/Y",strtotime($e_date_formaated));
+                                              
+                                               $dob=  $employee[0]->DateOfBirth;
+                                                  $dateofbirth= ( $dob==null) ? null :  date("d/m/Y", strtotime($dob) );
                                                ?>
-                                                    <td>{{ $dob }}</td>
+                                                    <td>{{$dateofbirth }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold">Is Supervisor</td>
@@ -214,23 +216,28 @@
 
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0"
                                                 class="table table-striped table-sm table-responsive">
+                                                <?php
+
+                                                $VisaIssueDate =  $employee[0]->VisaIssueDate;
+                                                $VisaExpiryDate =  $employee[0]->VisaExpiryDate;
+                                                $PassportExpiry =  $employee[0]->PassportNo;
+                                                $VisaIssueDate=  ($VisaIssueDate==null) ? null :  date("d/m/Y", strtotime($VisaIssueDate) );
+                                                // $VisaIssueDate1 = date("d/m/Y", strtotime($VisaIssueDate));
+                                                $VisaExpiryDate = ($VisaExpiryDate==null) ? null :  date("d/m/Y", strtotime($VisaExpiryDate) );
+                                                $PassportExpiry = ( $PassportExpiry==null) ? null :  date("d/m/Y", strtotime( $PassportExpiry) );
+                                                
+                                                ?>
                                                 <tr>
                                                     <td class="fw-bold col-md-5">VisaIssueDate</td>
 
-                                                    <?php
-                                               $e_date_formaated = $employee[0]->VisaIssueDate;
-                                               $issuedate=date("d/m/Y",strtotime($e_date_formaated));
-                                               ?>
-                                                    <td class="col-md-6">{{ $issuedate }}</td>
+                                                
+                                                    <td class="col-md-6">{{  $VisaIssueDate }}</td>
 
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold">VisaExpiryDate</td>
-                                                    <?php
-                                               $e_date_formaated = $employee[0]->VisaExpiryDate;
-                                               $visaexpirydate=date("d/m/Y",strtotime($e_date_formaated));
-                                               ?>
-                                                    <td>{{  $visaexpirydate }}</td>
+                                                   
+                                                    <td>{{  $VisaExpiryDate }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold">PassportNo</td>
@@ -241,11 +248,8 @@
 
                                                 <tr>
                                                     <td class="fw-bold">PassportExpiry</td>
-                                                    <?php
-                                               $e_date_formaated =  $employee[0]->PassportExpiry;
-                                               $passportexpirydate=date("d/m/Y",strtotime($e_date_formaated));
-                                               ?>
-                                                    <td>{{ $passportexpirydate }}</td>
+                                                   
+                                                    <td>{{$PassportExpiry }}</td>
                                                 </tr>
 
 
@@ -345,6 +349,10 @@
                                                  $install_date123 = $employee[0]->eDate;
                                                  $start_date_employ = date("d/m/Y", strtotime($install_date123));
 
+                                                 
+                                                    $startdate=  $employee[0]->eDate;
+                                                    $start_date_employ= ( $dob==null) ? null :  date("d/m/Y", strtotime($startdate) );
+
                                                  ?>
                                                     <td class="fw-bold">StartDate</td>
                                                     <td>{{ $start_date_employ }}</td>
@@ -411,25 +419,6 @@
             </div>
 
         </div>
-
-
-        
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script> © ShahCorporation.
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-end d-none d-sm-block">
-                            Design & Develop by Teqholic
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
     
 

@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main')
+@extends('template.hr_tmp')
 
 @section('title', 'JobTitle')
 

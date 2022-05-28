@@ -18,11 +18,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     <link href="{{ asset('assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }} " rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }} " rel="stylesheet"
+        type="text/css">
     <link href="{{ asset('assets/libs/spectrum-colorpicker2/spectrum.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    {{-- <link rel="stylesheet" href="{{ asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.css') }}"> --}}
+    <link href="{{ asset('assets/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet"
+        type="text/css">
+    <link href="{{ asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    {{--
+    <link rel="stylesheet" href="{{ asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.css') }}"> --}}
 
 
 
@@ -34,14 +38,19 @@
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
     <!-- DataTables -->
-    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="{{ asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
 
-    <link href="{{URL('/')}}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{URL('/')}}/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{URL('/')}}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{URL('/')}}/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
@@ -68,7 +77,8 @@
                         </a>
                     </div>
 
-                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
                         <i class="fa fa-fw fa-bars"></i>
                     </button>
 
@@ -85,17 +95,22 @@
                 <div class="d-flex">
 
                     <div class="dropdown d-inline-block d-lg-none ms-2">
-                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <i class="mdi mdi-magnify"></i>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-search-dropdown">
 
                             <form class="p-3">
                                 <div class="form-group m-0">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -106,63 +121,72 @@
 
 
                     <div class="dropdown d-none d-lg-inline-block ms-1">
-                        <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
                             <i class="bx bx-fullscreen"></i>
                         </button>
                     </div>
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect"
-                    id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <i class="bx bx-bell bx-tada"></i>
-                    <span class="badge bg-danger rounded-pill" id="badge-id">
-                        @php
-                        $id = Session::get('EmployeeID');
-                        $data = DB::table('v_notice')
-                            ->select(DB::raw("count(*) as Total"))
-                            ->where('EmployeeID',$id)
-                            ->where('Status',0)
-                            ->get();
-                        @endphp
-                        {{$data[0]->Total}}
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-bell bx-tada"></i>
+                            <span class="badge bg-danger rounded-pill" id="badge-id">
+                                @php
+                                $id = Session::get('EmployeeID');
+                                $data = DB::table('v_notice')
+                                ->select(DB::raw("count(*) as Total"))
+                                ->where('EmployeeID',$id)
+                                ->where('Status',0)
+                                ->get();
+                                @endphp
+                                {{$data[0]->Total}}
 
-                    </span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                    aria-labelledby="page-header-notifications-dropdown">
-                    <div class="p-3">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-auto">
-                                <a href="#!" class="small" key="t-view-all"> View All</a>
+                            <div data-simplebar style="max-height: 430px;">
+                                <table class="notification-table">
+                                    <tbody class="notification-table-body"></tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div data-simplebar style="max-height: 430px;">
-                        <table class="notification-table">
-                            <tbody class="notification-table-body"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
 
                     <div class="dropdown d-inline-block">
-                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="{{asset('employee_pictures')}}/{{Session::get('Picture')}}" alt="Header Avatar">
-                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{Session::get('FullName')}}</span>
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user"
+                                src="{{asset('employee_pictures')}}/{{Session::get('Picture')}}" alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1"
+                                key="t-henry">{{Session::get('FullName')}}</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <a class="dropdown-item" href=""><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
+                            <a class="dropdown-item" href=""><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                <span key="t-profile">Profile</span></a>
                             <!-- <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a> -->
                             <!-- <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></a> -->
-                            <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
+                                    key="t-lock-screen">Lock screen</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="{{route('auth.logout')}}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                            <a class="dropdown-item text-danger" href="{{route('auth.logout')}}"><i
+                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
                         </div>
                     </div>
 
@@ -176,155 +200,30 @@
 
 
         <!-- Static Backdrop Modal -->
-<div class="modal fade" id="notification-update-modal"  tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="notification-update-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title new-title" id="notification-update-modalLabel"></h5>
-                <h5 style="display: none;" class="modal-title new-id" id="new-id"></h5>
-               
-            </div>
-            <div class="modal-body">
-                <p class="mb-0 new-description"></p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-light notification-understood" data-bs-dismiss="modal">Close</button>
+        <div class="modal fade" id="notification-update-modal" tabindex="-1" role="dialog" data-bs-backdrop="static"
+            data-bs-keyboard="false" aria-labelledby="notification-update-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title new-title" id="notification-update-modalLabel"></h5>
+                        <h5 style="display: none;" class="modal-title new-id" id="new-id"></h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-0 new-description"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light notification-understood"
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="vertical-menu">
 
-            <div data-simplebar class="h-100">
-
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="metismenu list-unstyled" id="side-menu">
-                        <li class="menu-title" key="t-menu">Menu</li>
-
-                        <li>
-                            <a href="{{route('dashboard')}}" class="waves-effect">
-                                <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end"></span>
-                                <span key="t-dashboards">Dashboards</span>
-                            </a>
-
-                        </li>
-
-
-                        <li>
-                            <a href="{{ route('showemployee') }}" class="waves-effect">
-                                <i class="bx bxs-user-detail"></i><span class="badge rounded-pill bg-info float-end"></span>
-                                <span key="t-dashboards">Employee</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="{{ route('departreports')}}" class=" waves-effect">
-                                <i class="bx bx-layout"></i>
-                                <span key="t-layouts">Reports</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-task"></i>
-                                <span key="t-crypto">Invoice</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('saleinvoice') }}" key="t-wallet">Item</a></li>
-                                <li><a href="{{ route('serviceSaleInvoice') }}" key="t-buy">Service</a></li>
-                                
-                                
-                            </ul>
-                        </li>
-                        <li>
-                                <a href="{{ route('showproducts') }}" class="waves-effect">
-                                    <i class="bx bx-file"></i>
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new"></span>
-                                    <span key="t-file-manager">Products</span>
-                                </a>
-                        </li>
-                         <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-layout"></i>
-                                <span key="t-layouts">Other</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li>
-                                <li><a href="{{ route('departments') }}" key="t-light-sidebar">Departments</a></li>
-                                <li><a href="{{ route('educationlevels') }}" key="t-compact-sidebar">Education Levels</a></li>
-                                <li><a href="{{ route('stafftype') }}" key="t-boxed-width">Staff Type</a></li>
-                                <li><a href="{{ route('title') }}" key="t-preloader">Title</a></li>
-                                <li><a href="{{ url('/Job_Title')}}" key="t-default">Job Title</a></li>
-                                <li><a href="{{ url('/Leave_Status')}}" key="t-saas">Leave Status</a></li>
-                                <li><a href="{{ url('/LeaveType')}}" key="t-saas">Leave Type</a></li>
-                                <li><a href="{{route('allownces')}}" key="t-saas">Allowance</a></li>
-                                <!-- <li><a href="{{route('PettyCash')}}" key="t-saas">Petty Cash</a></li> -->
-                                <li><a href="{{ url('/letter')}}" key="t-blog">Letter</a></li>
-                                <!-- <li><a href="{{ url('/Item') }}" key="t-blog">Item</a></li> -->
-                                <!-- <li><a href="{{ url('/Voucher') }}" key="t-blog">Voucher</a></li>
-                                <li><a href="{{ url('/JournalVoucher') }}" key="t-blog">Journal Voucher</a></li> -->
-                        </li>
-
-                    </ul>
-                    </li>
-                   
-
-                            <li>
-                                <a href="{{URL('chartofaccount')}}" class="waves-effect">
-                                    <i class="mdi mdi-cash-register"></i>
-                                    <span key="t-calendar">Chart Of Account</span>
-                                </a>
-                            </li>
-
-                        <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bxs-note'></i>
-                                    <span key="t-ecommerce">Notice Board</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{URL('/addNewNotice')}}" key="t-products">Add New Notice</a></li>
-                                    <li><a href="{{URL('datatable')}}" key="t-products">View All Notices</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="{{URL('supplierCreate')}}" class=" waves-effect">
-                                    <i class="mdi mdi-rv-truck"></i>
-                                    <span key="t-calendar">Supplier</span>
-                                </a>
-                            </li> 
-
-                            <li>
-                                <a href="{{URL('customerCreate')}}" class="waves-effect">
-                                    <i class="mdi mdi-account-cash"></i>
-                                    <span key="t-calendar">Customer</span>
-                                </a>
-                            </li> 
-
-                            <!-- <li>
-                                <a href="{{URL('userCreate')}}" class="waves-effect">
-                                    <i class="mdi mdi-account-plus"></i>
-                                    <span key="t-calendar">User</span>
-                                </a>
-                            </li> 
-                            <li>
-                                <a href="{{URL('/logout')}}" class="waves-effect">
-                                    <i class="bx bx-power-off"></i>
-                                    <span key="t-calendar">Logout</span>
-                                </a>
-                            </li> -->
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
-        </div>
+        @include('template.sidebars.hr_sidebar')
         <!-- Left Sidebar End -->
 
 
@@ -415,8 +314,8 @@
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
-<script>
-   $(document).ready(function () {
+    <script>
+        $(document).ready(function () {
     $.ajaxSetup({
         headers:{
             'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
@@ -498,7 +397,7 @@
             });
         });
 
-</script>
+    </script>
 
 
 </body>

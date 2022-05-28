@@ -20,7 +20,16 @@ class LoginController extends Controller
 
     function login()
     {
+
+        if(Session::has('FullName'))
+        {
+           return redirect('/dashboard');
+
+      }
+      else{
         return view('auth.login');
+      }
+       
     }
     function logout()
     {
@@ -30,18 +39,25 @@ class LoginController extends Controller
 
     public function UserVerify(Request $request)
     {
+        // dd($request); 
+         
         
         if ($request->StaffType == 'Management') {
 
-             $username = $request->input('email');
+                // dd('hello');
+             $username = $request->email;
             $password =  $request->input('password');
             
+         
 
             $data = DB::table('employee')->where('Email', '=', $username)
                 ->where('Password', '=', $password)
                 ->where('Active', '=', 'Y')
                 ->get();
+              
+             
             if (count($data) > 0) {
+                // dd('heloo');
                 Session::put('FullName', $data[0]->FirstName);
                 Session::put('EmployeeID', $data[0]->EmployeeID);
                 Session::put('Email', $data[0]->Email);
@@ -50,9 +66,12 @@ class LoginController extends Controller
                 Session::put('Picture', $data[0]->Picture);
                 Session::put('LoggedUser');
 
+               
+
                 if (session::get('StaffType') == 'HR') {
                     $pagetitle = "HR Dashboard";
                 // dd($pagetitle);
+          
                     return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                 } elseif (session::get('StaffType') == 'GM') {
                     $pagetitle = "GM Dashboard";
@@ -66,10 +85,10 @@ class LoginController extends Controller
                 }
             } else {
 
-
+                    // dd('heelooo');
                 //session::flash('error', 'Invalid username or Password. Try again'); 
 
-                return redirect('/')->with('error', 'Invalid User Name or Password')->with('class', 'success');
+                return redirect('/login')->with('error', 'Invalid User Name or Password')->with('class', 'success');
 
                 // return redirect ('Login')->withinput($request->all())->with('error', 'Invalid username or Password. Try again');
             }

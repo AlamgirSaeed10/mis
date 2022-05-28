@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 
 @section('title', 'Edit Report')
 @section('content')
@@ -54,22 +54,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © ShahCorporation.
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-end d-none d-sm-block">
-                        Design & Develop by Teqholic
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
 </div>
 <script>
     CKEDITOR.replace('TextArea', {

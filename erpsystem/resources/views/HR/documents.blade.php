@@ -1,4 +1,4 @@
-@extends('HR.HR-layout.main')
+@extends('template.hr_tmp')
 
 @section('title', 'Documents')
 
@@ -181,8 +181,7 @@
                 </div>
                 <!-- end col -->
 
-                @include('HR.hr-layout.hr-sidebar')
-
+                @include('template.hr-rightsidebar')
 
 
             </div>

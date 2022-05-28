@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.staff_tmp')
 
 @section('title', 'Leave')
 
@@ -20,7 +20,7 @@
                                 <div class="page-title-right">
                                     <!-- button will appear here -->
 
-                                    <a href="{{ URL('/Employee') }}"
+                                    <a href="{{ URL('/employeeprofile') }}"
                                         class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i
                                             class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                         </div> -->
-                        @include('employe_section.layout.employeenav')
+                        @include('template.employeenav')
                         <div class="card">
                             <div class="card-header bg-transparent border-bottom h5  ">
                                 Offical Details
@@ -273,22 +273,7 @@
 
     </div>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © Skote.
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-end d-none d-sm-block">
-                        Design & Develop by Themesbrand
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
