@@ -1,4 +1,4 @@
-@extends('template.hr_tmp')
+@extends('template.main_tmp')
 
 @section('title', 'Edit Report')
 @section('content')

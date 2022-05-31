@@ -195,7 +195,7 @@ class EmployeeController extends Controller
                     $btn = '<div class="dropdown">
         
                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-ellipsis-h"></i>
+                           <i class="fas fa-ellipsis-h text-secondary"></i>
                          </a>
                        <div class="dropdown-menu">
                        <a class="dropdown-item"  href ="employeedetail/' . $row->EmployeeID . '" class="btn btn-sm edit" title="Edit"><i class="fa fa-eye text-secondary"></i>&nbsp; View</a>

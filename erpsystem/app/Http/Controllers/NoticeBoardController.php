@@ -41,9 +41,11 @@ class NoticeBoardController extends Controller
         $get_employeID = DB::table('notice')->where("FromEmployeeID",Session::get("EmployeeID"))->get();
         return DataTables::of($get_employeID)->addIndexColumn()->addColumn('action', function ($row)
         {
+           
 
-            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit btn btn-info btn-sm"><i class="mdi mdi-eye-check-outline"></i></a> ';
-            $btn = $btn . '<a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit btn btn-danger btn-sm"><i class="mdi mdi-trash-can"></i></a>';
+
+            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit btn btn-sm"><i class="fa fa-eye text-secondary"></i></a>
+            <a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit btn btn-sm"> <i class="fa fa-trash text-secondary"></i></a>';
 
 
             return $btn;

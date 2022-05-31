@@ -1,4 +1,4 @@
-@extends('template.hr_tmp')
+@extends('template.main_tmp')
 @section('title', 'Notices')
 @section('content')
 <div class="main-content">

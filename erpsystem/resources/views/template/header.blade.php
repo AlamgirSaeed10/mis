@@ -98,7 +98,7 @@
                         </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="{{URL('/userProfile')}}">
+                    <a class="dropdown-item" href="{{URL('/employeeprofile')}}">
                         <i class="bx bx-user font-size-16 align-middle me-1"></i>
                         <span key="t-profile">Profile</span></a>
                     <a class="dropdown-item d-block" href="{{URL('/ChangePassword')}}"><i

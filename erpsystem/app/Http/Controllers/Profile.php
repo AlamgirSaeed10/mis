@@ -47,7 +47,7 @@ class Profile extends Controller
 		{
 			
 			 DB::table('employee')->where('EmployeeID', $EmployeeID)->update($data);
-			 return redirect()->back()->with('success', 'Password Changed Successfully')->with('class', 'success');
+			 return redirect('/employeeprofile')->with('error', 'Password Changed Successfully')->with('class', 'success');
 
 
 		}

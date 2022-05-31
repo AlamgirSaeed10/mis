@@ -1,4 +1,4 @@
-@extends('template.staff_tmp')
+@extends('template.main_tmp')
 
 @section('title', 'Profile')
 
@@ -351,7 +351,7 @@
 
                                                  
                                                     $startdate=  $employee[0]->eDate;
-                                                    $start_date_employ= ( $dob==null) ? null :  date("d/m/Y", strtotime($startdate) );
+                                                    $start_date_employ= ( $startdate==null) ? null :  date("d/m/Y", strtotime($startdate) );
 
                                                  ?>
                                                     <td class="fw-bold">StartDate</td>

@@ -78,7 +78,7 @@
                                                   </a>
                                                 <div class="dropdown-menu">
                                                 <a class="dropdown-item"  href ="{{ url('/student') }}/{{ $student->StudentID }}" class="btn btn-sm edit" title="View"><i class="fa fa-eye text-secondary"></i>&nbsp; View</a>
-                                                <a class="dropdown-item"  href ="{{ url('/studentfee') }}/{{ $student->StudentID }}" class="btn btn-sm edit" title="View"><i class="fa fa-money text-secondary"></i>&nbsp; Course Fee</a>
+                                                <a class="dropdown-item"  href ="{{ url('/studentfee') }}/{{ $student->StudentID }}" class="btn btn-sm edit" title="View"><i class="fa-money text-secondary"></i>&nbsp; Course Fee</a>
                                                     <a class="dropdown-item" href="{{ url('/editstudent') }}/{{ $student->StudentID }}" class="btn btn-sm edit" title="Edit"><i class="fa fa-pen text-secondary"></i>&nbsp; Edit</a>
                                                     <a class="dropdown-item" style="cursor: pointer;"
                                                     onclick="delete_confirm('{{ $student->StudentID }}')"><i

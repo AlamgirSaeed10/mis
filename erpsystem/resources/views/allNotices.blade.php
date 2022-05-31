@@ -1,5 +1,5 @@
-@extends('template.hr_tmp')
-@section('title', 'Users')
+@extends('template.main_tmp')
+@section('title', 'Notices')
 @section('content')
 <head>
     {{-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> --}}

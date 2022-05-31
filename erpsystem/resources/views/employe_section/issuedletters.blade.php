@@ -1,4 +1,4 @@
-@extends('template.staff_tmp')
+@extends('template.main_tmp')
 
 @section('title', 'Employee Letter')
 

@@ -1,5 +1,5 @@
-@extends('template.hr_tmp')
-@section('title', $pagetitle) 
+@extends('template.main_tmp')
+@section('title', 'Dashboard') 
 @section('content')
 <div class="main-content">
     <div class="page-content">

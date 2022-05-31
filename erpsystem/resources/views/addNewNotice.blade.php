@@ -1,5 +1,5 @@
-@extends('template.hr_tmp')
-@section('title', 'Users')
+@extends('template.main_tmp')
+@section('title', 'Notices')
 @section('content')
 <head>  
 <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>

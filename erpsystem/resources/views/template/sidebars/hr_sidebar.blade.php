@@ -26,33 +26,6 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('departreports')}}" class=" waves-effect">
-                        <i class="bx bx-layout"></i>
-                        <span key="t-layouts">Reports</span>
-                    </a>
-
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-task"></i>
-                        <span key="t-crypto">Invoice</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('saleinvoice') }}" key="t-wallet">Item</a></li>
-                        <li><a href="{{ route('serviceSaleInvoice') }}" key="t-buy">Service</a></li>
-
-
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ route('showproducts') }}" class="waves-effect">
-                        <i class="bx bx-file"></i>
-                        <span class="badge rounded-pill bg-success float-end" key="t-new"></span>
-                        <span key="t-file-manager">Products</span>
-                    </a>
-                </li>
-                <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-layout"></i>
                         <span key="t-layouts">Other</span>
@@ -67,7 +40,6 @@
                         <li><a href="{{ url('/Leave_Status')}}" key="t-saas">Leave Status</a></li>
                         <li><a href="{{ url('/LeaveType')}}" key="t-saas">Leave Type</a></li>
                         <li><a href="{{route('allownces')}}" key="t-saas">Allowance</a></li>
-                        <!-- <li><a href="{{route('PettyCash')}}" key="t-saas">Petty Cash</a></li> -->
                         <li><a href="{{ url('/letter')}}" key="t-blog">Letter</a></li>
                         <!-- <li><a href="{{ url('/Item') }}" key="t-blog">Item</a></li> -->
                         <!-- <li><a href="{{ url('/Voucher') }}" key="t-blog">Voucher</a></li>
@@ -126,19 +98,6 @@
                     <span key="t-calendar">Customer</span>
                 </a>
             </li>
-
-            <!-- <li>
-                        <a href="{{URL('userCreate')}}" class="waves-effect">
-                            <i class="mdi mdi-account-plus"></i>
-                            <span key="t-calendar">User</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{URL('/logout')}}" class="waves-effect">
-                            <i class="bx bx-power-off"></i>
-                            <span key="t-calendar">Logout</span>
-                        </a>
-                    </li> -->
             </ul>
         </div>
         <!-- Sidebar -->

@@ -63,9 +63,10 @@ class LoginController extends Controller
                 Session::put('LoggedUser');
 
                 if (session::get('StaffType') == 'HR') {
+                 
                     $pagetitle = "HR Dashboard";
                 // dd($pagetitle);
-                return redirect('/dashboard');
+                return redirect('/dashboard')->with('pagetitle',  $pagetitle);
           
                     // return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
                 } elseif (session::get('StaffType') == 'GM') {
@@ -78,11 +79,7 @@ class LoginController extends Controller
                     
                     return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
 
-                } elseif (session::get('StaffType') == 'Employee' || Session::get('StaffType') == 'EMPLOYEE' ) {
-                    $pagetitle = "Employee Dashboard";
-                    return view('dashboard',compact('pagetitle'))->with('success', 'Welcome to Extensive HR System');
-
-                }
+                } 
                 else
                 {
                     return redirect('/login')->with('error', 'Please Login as an Employee')->with('class', 'success');

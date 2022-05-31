@@ -1,4 +1,4 @@
-@extends('template.hr_tmp')
+@extends('template.main_tmp')
 @section('title', 'Voucher')
 @section('content')
     <style>
@@ -7,7 +7,7 @@
             background-color: transparent;
             resize: none;
             outline: none;
-            "
+            
 
         }
 

@@ -1,6 +1,6 @@
 
 
-@extends('layout.main')
+@extends('template.main_tmp')
 
 @section('title', 'Profile')
 @section('content')

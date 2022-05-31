@@ -1,4 +1,4 @@
-@extends('employe_section.layout.employeemain')
+@extends('template.main_tmp')
 <?php 
 
 $invoicetypes = DB::table('invoice_type')->get();

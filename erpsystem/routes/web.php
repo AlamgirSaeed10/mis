@@ -250,6 +250,8 @@ Route::post('/getitems' , [WorkController::class, 'saleinvoiceitems']);
 // ................!Service Invoice Section!....................
 //Service invoice
 Route::get('/serviceSaleInvoice' , [WorkController::class, 'ServiceSaleInvoice'])->name('serviceSaleInvoice');
+Route::post('/itemsale' , [InvoiceController::class, 'itemsale'])->name('itemsaleinvoice');
+
 //getitems in saleinvoice
 Route::post('/getServiceItems' , [WorkController::class, 'ServiceSaleInvoiceItems']);
 
