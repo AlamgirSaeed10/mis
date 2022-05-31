@@ -62,8 +62,6 @@ class LoginController extends Controller
                 Session::put('Picture', $data[0]->Picture);
                 Session::put('LoggedUser');
 
-               
-
                 if (session::get('StaffType') == 'HR') {
                     $pagetitle = "HR Dashboard";
                 // dd($pagetitle);
@@ -79,7 +77,10 @@ class LoginController extends Controller
                     $pagetitle = "OM Dashboard";
                     
                     return view('dashboard',compact('pagetitle'))->with('error', 'Welcome to Extensive HR System')->with('class', 'success');
-                    // return redirect('showemployee')->with('error','Welcome to Extensive HR System')->with('class','success');
+
+                } elseif (session::get('StaffType') == 'Employee' || Session::get('StaffType') == 'EMPLOYEE' ) {
+                    $pagetitle = "Employee Dashboard";
+                    return view('dashboard',compact('pagetitle'))->with('success', 'Welcome to Extensive HR System');
 
                 }
                 else
@@ -94,7 +95,6 @@ class LoginController extends Controller
 
                 return redirect('/login')->with('error', 'Invalid User Name or Password')->with('class', 'success');
 
-                // return redirect ('Login')->withinput($request->all())->with('error', 'Invalid username or Password. Try again');
             }
         } else {
 
@@ -127,7 +127,7 @@ class LoginController extends Controller
                    return redirect('/employeeprofile');
                 //    return view('employe_section.dashboard', compact('employee' ,'pagetitle'));
             } else {
-                return redirect('/')->withinput($request->all())->with('error', 'Invalid username or Password. Try again');
+                return redirect('/login')->withinput($request->all())->with('error', 'Invalid username or Password. Try again');
             }
         }
     }

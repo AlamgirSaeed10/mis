@@ -1,5 +1,5 @@
 @extends('template.hr_tmp')
-@section('title', 'Dashboard') 
+@section('title', $pagetitle) 
 @section('content')
 <div class="main-content">
     <div class="page-content">
@@ -100,11 +100,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-xl-4">
+                <div class="col-sm-12 col-md-6 col-xl-4">
                     <div class="card">
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="revenue-chart"></div>
+                                <div id="total-revenue-chart"></div>
                             </figure>
                         </div>
                     </div>
@@ -216,12 +216,12 @@ enabled: false
 },exporting: { enabled: false }
 });
 // ============================[ Revenue Chart ]====================
-Highcharts.chart('revenue-chart', {
+Highcharts.chart('total-revenue-chart', {
     chart: {
         type: 'line',
         },
     title: {
-        text: 'Revenue'
+        text: 'Total Revenue'
     },
     plotOptions: {
         series: {
@@ -245,7 +245,8 @@ echo   rand(1,200).",";
     exporting: { enabled: false }
 });
 
-// =========================================================================================================
+// ================================[ Deditor Customer ]================================================
+
 
 Highcharts.chart('debitor-customer', {
     chart: {
@@ -275,6 +276,7 @@ echo   rand(1,200).",";
     enabled: false},
     exporting: { enabled: false }
 });
+// ================================[ Creditor Customer ]================================================
 Highcharts.chart('creditor-customer', {
     chart: {
         type: 'line',
@@ -303,6 +305,8 @@ echo   rand(1,200).",";
     enabled: false},
     exporting: { enabled: false }
 });
+// ================================[ Cash Flow ]================================================
+
 Highcharts.chart('cash-flow', {
     chart: {
         type: 'line',
@@ -331,6 +335,7 @@ echo   rand(1,200).",";
     enabled: false},
     exporting: { enabled: false }
 });
+// ================================[ Cash Summar]================================================
 Highcharts.chart('cash-summary', {
     chart: {
         type: 'line',
