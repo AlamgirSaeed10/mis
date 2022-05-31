@@ -31,10 +31,10 @@ class NoticeBoardController extends Controller
             );
             DB::table('notice_status')->insertGetId($data);
         }
-        return redirect('datatable')->with('success', 'Notice has be uploaded Successfully');
+        return redirect('uploadedNotices')->with('success', 'Notice has be uploaded Successfully');
     }
-    public function datatable(){
-    return view('datatable');
+    public function uploadedNotices(){
+    return view('uploadedNotices');
     }
     public function viewAllNotices(){
 
@@ -44,15 +44,15 @@ class NoticeBoardController extends Controller
            
 
 
-            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit btn btn-sm"><i class="fa fa-eye text-secondary"></i></a>
-            <a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit btn btn-sm"> <i class="fa fa-trash text-secondary"></i></a>';
+            $btn = '<a href="' . URL('getAllNotice/' . $row->NoticeID) . '" class="edit btn-sm"><i class="fa fa-eye text-secondary"></i></a>
+            <a href="javascript:void(0)" onclick="delete_confirm2(`deleteNotice`,'.$row->NoticeID.')" class="edit btn-sm"> <i class="fa fa-trash text-secondary"></i></a>';
 
 
             return $btn;
         })->rawColumns(['action'])
             ->make(true);
 
-        return redirect('datatable');
+        return redirect('uploadedNotices');
     }
     public function getAllNotice($id){
         $getRelatedNotice = DB::table('v_employeenotice')->where('NoticeID', $id)->get();
@@ -86,7 +86,7 @@ class NoticeBoardController extends Controller
         $delete_notice = DB::table('notice')->where('NoticeID', $id)->where('FromEmployeeID',Session::get('EmployeeID'));
         $delete_notice->delete();
 
-        return redirect('datatable')->with('success','Notice has been Deleted Successfully!');
+        return redirect('uploadedNotices')->with('success','Notice has been Deleted Successfully!');
     }
    
 }

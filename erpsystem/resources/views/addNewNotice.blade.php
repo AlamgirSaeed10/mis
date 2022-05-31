@@ -53,7 +53,7 @@
                                <textarea name="Description" id="Description" cols="30" rows="10" class="form-control"></textarea>
                            </div>
                         </div>
-                        <input type="hidden" name="FromEmployeeID" value="{{Session::get("EmployeeID")}}" placeholder="">
+                        <input type="hidden" name="FromEmployeeID" value="{{Session::get('EmployeeID')}}" placeholder="">
                         <input type="submit" class="btn btn-primary w-md">                                   
                      </div>
                   </div>

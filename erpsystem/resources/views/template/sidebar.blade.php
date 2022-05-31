@@ -28,14 +28,14 @@
                             </li> 
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                               <a href="{{URL('/uploadedNotices')}}" key="t-products">
                                     <i class='bx bxs-note'></i>
                                     <span key="t-ecommerce">Notice Board</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
+                                <!-- <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{URL('/addNewNotice')}}" key="t-products">Add New Notice</a></li>
                                     <li><a href="{{URL('datatable')}}" key="t-products">View All Notices</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
 
                             <li>

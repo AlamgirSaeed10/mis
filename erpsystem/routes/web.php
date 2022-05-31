@@ -281,15 +281,12 @@ Route::post('/addcourse' , [ShahitController::class, 'addcourse'])->name('addcou
 
 
 Route::get('addNewNotice', [NoticeBoardController::class ,'addNewNotice']);
-Route::get('datatable', [NoticeBoardController::class ,'datatable']);
+Route::get('uploadedNotices', [NoticeBoardController::class ,'uploadedNotices']);
 Route::get('viewAllNotices', [NoticeBoardController::class ,'viewAllNotices'])->name('viewAllNotices');
 Route::get('getAllNotice/{id}', [NoticeBoardController::class ,'getAllNotice']);
 Route::post('UploadData', [NoticeBoardController::class ,'saveNoticeInDB']);
 Route::get('deleteNotice/{id}', [NoticeBoardController::class,'deleteNotice']);
 
-// Route::post('logincheck', 'LoginController@logincheck');
-// Route::get('logout', 'LoginController@logout');
-// notification
 Route::get('sendNotification', [NoticeBoardController::class,'sendNotification']);
 
 Route::get('fetch_notifications', [DashboardController::class,'fetch_notifications']);
