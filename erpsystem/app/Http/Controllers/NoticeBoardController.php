@@ -65,7 +65,8 @@ class NoticeBoardController extends Controller
         $id = DB::table('notice_status')->where('EmployeeID',session::get('EmployeeID'))->where('NoticeID',$id)->update($data);    
         return view('notice_notification', compact('get_notice'));
     }
-    public function sendNotification(){
+    public function sendNotification()
+    {
         $get_notice = DB::table('v_notice')->where('EmployeeID', Session::get('EmployeeID'))
             ->where("Status", '0')
             ->where("Desktop",'0')
@@ -76,11 +77,14 @@ class NoticeBoardController extends Controller
         return response()->json(['data' => $get_notice]);
             }
     }
-    public function deleteNotice($id){
+    public function deleteNotice($id)
+    {
+      
 
         $delete_notice = DB::table('notice')->where('NoticeID', $id)->where('FromEmployeeID',Session::get('EmployeeID'));
         $delete_notice->delete();
 
         return redirect('datatable')->with('success','Notice has been Deleted Successfully!');
     }
+   
 }

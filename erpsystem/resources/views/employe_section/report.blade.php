@@ -6,6 +6,7 @@
 
 
 <div class="main-content">
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
     <div class="page-content">
         <div class="container-fluid">

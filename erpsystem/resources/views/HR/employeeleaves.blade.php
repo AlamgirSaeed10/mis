@@ -128,7 +128,7 @@
                                                             <i class="mdi mdi-dots-horizontal font-size-18"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item openmodal" data-id="{{ $leave->LeaveID }}"><i class="fa fa-check text-secondary"></i>&nbsp; Approve</a>
+                                                            <a class="dropdown-item openmodal" data-id="{{ $leave->LeaveID }}"><i class="fa fa-check text-secondary"></i>&nbsp; Manage Leave</a>
                                                             <!-- <a class="dropdown-item openmodal" data-id="{{ $leave->LeaveID }}">View</a> -->
                                                             <a class="dropdown-item"  onclick="delete_leave('deleteletter','{{ $leave->LeaveID }}')"><i class="fa fa-trash text-secondary"></i>&nbsp; Delete</a>
                                                         </div>
@@ -213,10 +213,10 @@
                     @csrf
                     <input type="hidden" id="LeaveId" name="LeaveID" value="">
                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">select:</label>
+                        <label for="recipient-name" class="col-form-label">Status</label>
                         <div class="col-md-12">
-                            <select class="form-select" name="status">
-                                <option>Select</option>
+                            <select class="form-select" name="status" required>
+                                <option value="">Select Status</option>
                                 @foreach ( $leaveStatus as $leavestd)
                                 <option value="{{ $leavestd->LeaveStatus }}">{{ $leavestd->LeaveStatus }}</option>
 
@@ -224,7 +224,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Message:</label>
+                            <label for="message-text" class="col-form-label">Message</label>
                             <textarea class="form-control" name="reason" id="message-text"></textarea>
                         </div>
                     </div>

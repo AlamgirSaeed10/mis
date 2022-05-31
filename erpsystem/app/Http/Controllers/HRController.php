@@ -169,9 +169,10 @@ class HRController extends Controller
         ]);
 
         $AllowanceTitle = $request->AllowanceTitle;
-        $AllowanceType = $request->AllowanceType;
+        $AllowanceCategory = $request->AllowanceCategory;
         DB::table('allowance_list')->insert([
             'AllowanceTitle' => $AllowanceTitle,
+            'AllowanceCategory' => $AllowanceCategory,
 
         ]);
         return redirect()->back()->with('error', ' Submit Successfully')->with('class', 'success');

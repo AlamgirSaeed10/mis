@@ -12,7 +12,7 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{URL('/')}}/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{URL('/')}}/assets/images/Shah-Corps_Logo.png">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -41,6 +41,7 @@
  
         <!-- Responsive datatable examples -->
  
+        <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
    <script type="text/javascript">
@@ -51,8 +52,7 @@
     function delete_confirm(url_plus_id) {
         var url;
 
-        url = '{{URL::TO('/delete_customer')}}'+'/'+ url_plus_id;
-        
+        url = '{{URL::TO('/delete_customer/')}}'+ url_plus_id;
     
        
             jQuery('#staticBackdrop').modal('show', {backdrop: 'static'});
@@ -154,7 +154,13 @@
             <!-- end of header -->
 
             <!-- ========== Left Sidebar Start ========== -->
+            @if(session::get('StaffType') == 'HR')
              @include('template.sidebars.hr_sidebar')
+
+             @elseif(session::get('StaffType') == 'Employee')
+
+             @include('template.staff_sidebar')
+             @endif
             <!-- Left Sidebar End -->
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -172,7 +178,6 @@
          
 
         <!-- JAVASCRIPT -->
-        <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
         <script src="{{URL('/')}}/assets/libs/jquery/jquery.min.js"></script>
         <script src="{{URL('/')}}/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

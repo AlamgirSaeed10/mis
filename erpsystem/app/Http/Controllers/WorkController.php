@@ -178,18 +178,18 @@ class WorkController extends Controller
         $this->validate($request, [
             'Title' => 'required|max:30',
             'Content' => 'required|max:30',
-            'UserID' => 'required|max:30',
+           
         ]);
 
 
         $Title = $request->input('Title');
         $Content = $request->input('Content');
-        $UserID = $request->input('UserID');
+       
 
         $data = array(
             'Title' => $Title,
             "Content" => $Content,
-            "UserID" => $UserID,
+           
         );
 
         DB::table('letter')->insert($data);

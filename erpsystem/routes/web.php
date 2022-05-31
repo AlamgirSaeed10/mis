@@ -16,6 +16,7 @@ use App\Http\Controllers\Supplier;
 use App\Http\Controllers\Customer;
 use App\Http\Controllers\AddUser;
 use App\Http\Controllers\Profile;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\DashboardController;
 
 
@@ -242,6 +243,7 @@ Route::post('/LeaveTypeUpdate',[HRController::class,'LeaveTypeupdate'])->name('L
 // ................!ProductInvoice Section!....................
 //invoice
 Route::get('/saleinvoice' , [WorkController::class, 'saleinvoice'])->name('saleinvoice');
+Route::get('/serviceinvoice' , [SalesController::class, 'serviceinvoice'])->name('serviceinvoice');
 //getitems in saleinvoice
 Route::post('/getitems' , [WorkController::class, 'saleinvoiceitems']);
 
@@ -278,9 +280,11 @@ Route::post('/addcourse' , [ShahitController::class, 'addcourse'])->name('addcou
 
 Route::get('addNewNotice', [NoticeBoardController::class ,'addNewNotice']);
 Route::get('datatable', [NoticeBoardController::class ,'datatable']);
-Route::get('viewAllNotices', [NoticeBoardController::class ,'viewAllNotices']);
+Route::get('viewAllNotices', [NoticeBoardController::class ,'viewAllNotices'])->name('viewAllNotices');
 Route::get('getAllNotice/{id}', [NoticeBoardController::class ,'getAllNotice']);
 Route::post('UploadData', [NoticeBoardController::class ,'saveNoticeInDB']);
+Route::get('deleteNotice/{id}', [NoticeBoardController::class,'deleteNotice']);
+
 // Route::post('logincheck', 'LoginController@logincheck');
 // Route::get('logout', 'LoginController@logout');
 // notification
@@ -338,9 +342,10 @@ Route::get('userDelete/{UserID}', [AddUser::class,'userDelete']);
 
 // =================================== User Profile ================================================= 
 
-Route::get('userProfile', [Profile::class,'userProfile']);
+Route::get('ChangePassword', [Profile::class,'changepassword']);
+// Route::get('userProfile', [Profile::class,'changepassword']);
 // Route::get('userProfileEdit/{UserID}', [Profile::class,'userProfileEdit']);
-Route::post('userProfileUpdate', [Profile::class,'userProfileUpdate']);
+Route::post('userPasswordUpdate', [Profile::class,'userPasswordUpdate']);
 
 
 Route::get('/Item',[HRController::class,'Item']);

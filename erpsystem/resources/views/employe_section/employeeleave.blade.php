@@ -184,9 +184,9 @@
                                                     <th>To</th>
                                                     <th>No of Days</th>
                                                     <th>Reason</th>
-                                                    <th>OM</th>
-                                                    <th>HR</th>
-                                                    <th>GM</th>
+                                                    <!-- <th>OM</th> -->
+                                                    <th>HR Status</th>
+                                                    <!-- <th>GM</th> -->
                                                     <th>Action</th>
 
 
@@ -212,9 +212,9 @@
                                                             ?>
                                                             <td scope="col">{{ $differ }}</td>
                                                     <td>{{ $leave->Reason }}</td>
-                                                    <td>{{ $leave->OMStatus }}</td>
+                                                    <!-- <td>{{ $leave->OMStatus }}</td> -->
                                                     <td>{{ $leave->HRStatus }}</td>
-                                                    <td>{{ $leave->GMStatus }}</td>
+                                                    <!-- <td>{{ $leave->GMStatus }}</td> -->
                                                     <td>
                                                         <div class="dropdown">
                                                             <a class="font-size-16 text-muted dropdown-toggle" role="button"

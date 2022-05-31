@@ -168,7 +168,7 @@
                                                 <label for="basicpill-firstname-input">Date<span
                                                         class="text-danger">*</span></label>
 
-                                                        <input type="date" class="form-control" name="CourseFeeDate">
+                                                        <input type="date" class="form-control" name="CourseFeeDate" required>
 
                                             </div>
                                         </div>

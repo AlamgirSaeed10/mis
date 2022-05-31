@@ -1,5 +1,5 @@
-@extends('HR.hr-layout.main')
-@section('title', $pagetitle)
+@extends('template.hr_tmp')
+@section('title', 'Password')
 @section('content')
 <div class="main-content">
 	<div class="page-content">
@@ -27,18 +27,17 @@
 			</div>
 			@endif
 			<div class="card">
-				<h3 class="card-header">MANAGE USERS</h3>
+				<h3 class="card-header">Manage Password</h3>
 				<div class="card-body">
 					<!-- enctype="multipart/form-data" -->
 
-					<form action="{{URL('/userProfileUpdate')}}" method="post"> {{csrf_field()}}
+					<form action="{{URL('/userPasswordUpdate')}}" method="post"> {{csrf_field()}}
 
-					<input type="text" class="form-control" name="UserID" value="1">
-
+					
 						<div class="row mb-2">
 							<label for="horizontal-firstname-input" class="col-md-2 col-form-label">Old Password</label>
 							<div class="col-md-6">
-								<input type="text" name="Password" class="form-control" id="Password">
+								<input type="text" name="OldPassword" class="form-control" id="Password">
 							</div>
 						</div>
 
@@ -51,7 +50,7 @@
 						<div class="row mb-2">
 							<label for="horizontal-firstname-input" class="col-md-2 col-form-label">Confirm New Password</label>
 						    	<div class="col-md-6">
-						        	<input type="text" name="Password" class="form-control" id="Password">
+						        	<input type="text" name="ConfirmPassword" class="form-control" id="Password">
 						        </div>
 						</div>
 

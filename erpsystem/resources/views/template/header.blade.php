@@ -5,7 +5,7 @@
             <div class="navbar-brand-box">
 
 
-                <a href="index.html" class="logo logo-light">
+                <a href="{{ url('/dashboard')}}" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('assets/images/Shah-Corps_Logo.png') }}" alt="" height="22">
                     </span>
@@ -172,7 +172,8 @@ function fetch_notifications() {
             <?php
             $data[0]->Total  = ($data[0]->Total >3 ) ? 3 : $data[0]->Total ;
             ?>
-            for(var i=0; i<{{$data[0]->Total}}; i++){
+            for(var i=0 ; i< {{$data[0]->Total}} ; i++)
+            {
                 $(".notification-table-body").append('<tr>\
                     <td style="width: 430px; padding-left: 10px; padding-right: 10px;">\
                         <a href="javascript:void(0)" class="text-notification-item get-notice-id"\

@@ -15,5 +15,9 @@ class SalesController extends Controller
         $pagetitle = "POS Terminal";
          return view ('test',compact('item','pagetitle')); 
     }
+    function serviceinvoice()
+    {
+        return  view('invoice.ServiceSaleinvoice');
+    }
 
 }

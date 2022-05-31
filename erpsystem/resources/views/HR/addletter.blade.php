@@ -32,13 +32,13 @@
                         <span style="color: red">@error('Title'){{ $message }} @enderror </span>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="mb-3">
                         <label for="formrow-inputState" class="form-label">UserID</label>
                         <input type="number" class="form-control" name="UserID" id="formrow-inputCity" placeholder="Enter Your UserID">
                         <span style="color: red">@error('UserID'){{ $message }} @enderror </span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-lg-4">
                     <div class="mb-3">

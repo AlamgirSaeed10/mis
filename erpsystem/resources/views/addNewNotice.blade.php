@@ -35,7 +35,7 @@
          @endif
          <div class="row">
             <div class="col-12">
-               <form action = "/UploadData" method = "post" class="form-group">
+               <form action = "{{ url('/UploadData')}}" method = "post" class="form-group">
                   {{csrf_field()}}
                   <div class="card">
                      <div class="card-body">

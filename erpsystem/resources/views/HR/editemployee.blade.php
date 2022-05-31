@@ -151,8 +151,8 @@
                                     </div>
                                      <div class="col-md-4">
                                     <label for="input-mask">CNIC</label>
-                                    <input id="input-mask" class="form-control input-mask" 
-                                    data-inputmask="'mask': 'xxxxx-xxxxxxx-x'" im-insert="true" name="CNIC" value="{{ $employee[0]->CNIC }} " required>
+                                    <input type="text"  class="form-control" 
+                                  name="CNIC" value="{{ $employee[0]->CNIC }}" required>
                                     <span class="text-muted">e.g 12345-6789456-1</span>
                                 </div>
 

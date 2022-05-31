@@ -20,21 +20,7 @@
                     </div>
                 @endif
 
-               <!--  @if (count($errors) > 0)
-
-                    <div>
-                        <div class="alert alert-danger pt-3 pl-0   border-3 bg-danger text-white">
-                            <p class="font-weight-bold"> There were some problems with your input.</p>
-                            <ul>
-
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-
-                @endif -->
+       
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Allowance</h4>
 

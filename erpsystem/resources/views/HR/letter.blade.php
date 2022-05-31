@@ -33,7 +33,7 @@
                                         <span style="color: red">@error('Title'){{ $message }} @enderror </span>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <!-- <div class="col-md-4">
                                     <div class="mb-3">
                                     <label for="basicpill-firstname-input">UserID *</label>
                                         <div class="input-group" id="datepicker2">
@@ -41,7 +41,7 @@
                                         </div>
                                         <span style="color: red">@error('UserID'){{ $message }} @enderror </span>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

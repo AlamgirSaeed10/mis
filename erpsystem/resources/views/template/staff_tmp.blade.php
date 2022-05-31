@@ -12,8 +12,7 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{URL('/')}}/assets/images/favicon.ico">
-
+        <link rel="shortcut icon" href="{{URL('/')}}/assets/images/Shah-Corps_Logo.png">
         <!-- Bootstrap Css -->
         <link href="{{URL('/')}}/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -35,6 +34,8 @@
          <link rel="stylesheet" href="{{URL('/')}}/assets/libs/%40chenfengyuan/datepicker/datepicker.min.css">
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
    <script type="text/javascript">
 
 $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
@@ -46,7 +47,7 @@ $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
     function delete_confirm(url_plus_id) {
         var url;
 
-        url = '{{URL::TO('/delete_customer')}}'+'/'+ url_plus_id;
+        url = '{{URL::TO('/delete_customer/')}}' + url_plus_id;
         
     
        
@@ -131,7 +132,6 @@ $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
 
        
 
-<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
 
         <!-- JAVASCRIPT -->

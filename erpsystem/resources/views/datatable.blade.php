@@ -1,5 +1,5 @@
 @extends('template.hr_tmp')
-@section('title', 'Users')
+@section('title', 'Notices')
 @section('content')
 <div class="main-content">
 <div class="page-content">
@@ -42,9 +42,9 @@
               <div class="col-12">
                 <div class="card">
                 <div class="card-body">
-                        <h4 class="card-title pb-3">Manage Users</h4>
+                        <h4 class="card-title pb-3">Manage Notices</h4>
                         <div class="table-responsive">
-                           <table class="table table-hover table-sm mb-0" id="datatable">
+                           <table class="table table-hover table-sm mb-0" id="notices">
                               <thead>
                                  <tr>
                                     <th>#</th>
@@ -66,11 +66,10 @@
 </div>
 <script type="text/javascript">
   $(function () {
-    
-    $('#datatable').DataTable({
+    $('#notices').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{'/viewAllNotices'}}",
+        ajax: "{{ route('viewAllNotices')}}",
         columns: [
             {data: 'NoticeID'},
             {data: 'Title'},

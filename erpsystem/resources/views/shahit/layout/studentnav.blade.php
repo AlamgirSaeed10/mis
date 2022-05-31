@@ -29,7 +29,7 @@
                         <i class="bx bxs-cog align-middle me-1"></i> Manage
                     </button>
                     <div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
-                        <a class="dropdown-item" href="/studentfee/{{$student[0]->StudentID}}"><i class="mdi mdi-pencil text-secondary font-size-16 me-2"></i>Add Fee</a>
+                        <a class="dropdown-item" href="{{url('/studentfee')}}/{{$student[0]->StudentID}}"><i class="mdi mdi-pencil text-secondary font-size-16 me-2"></i>Add Fee</a>
                     </div>
                 </div>
             </div>
