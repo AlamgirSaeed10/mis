@@ -32,7 +32,7 @@
                         <div class="card-body">
                             <h4 class="card-title mb-4">Chart Of Account</h4>
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs col-lg-4" role="tablist">
+                            <ul class="nav nav-tabs col-lg-6 col-sm-12 col-md-6" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-bs-toggle="tab" href="#level1" role="tab">
                                         <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
@@ -134,10 +134,10 @@
                                 <td class="col-md-1">
                                 
                                     <a href="{{ URL('EditChartOfAccountID_L1/'.$value->ChartOfAccountID)}}">
-                                        <i class="bx bx-pencil align-middle"></i>
+                                        <i style="cursor:pointer" class="bx bx-pencil align-middle  text-secondary"></i>
                                     </a>
 
-                                    <a href="#" onclick="delete_confirm2('DeleteChartOfAccountID',{{$value->ChartOfAccountID}})"><i class="bx bx-trash  align-middle"></i></a>
+                                    <a  onclick="delete_confirm2('DeleteChartOfAccountID',  '{{$value->ChartOfAccountID}}' )"><i class="bx bx-trash  align-middle text-secondary"  style="cursor:pointer"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -148,13 +148,42 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Are you sure to delete this information ?</p>
+                    <p class="text-center">
+
+
+
+                        <a href="#" class="btn btn-danger " id="delete_link">Delete</a>
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script>
     
     $(document).ready(function () {
     $('#dtBasicExample').DataTable();
     $('.dataTables_length').addClass('bs-select');
     });
-
+    function delete_confirm2(url, ChartOfAccountID) {
+           
+            url = '{{URL::TO('/')}}' +/DeleteChartOfAccountID/ + ChartOfAccountID;
+            jQuery('#staticBackdrop').modal('show', {
+                backdrop: 'static'
+            });
+            document.getElementById('delete_link').setAttribute('href', url);
+        }
     </script>
 
     @endsection

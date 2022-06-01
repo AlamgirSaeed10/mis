@@ -56,7 +56,7 @@ class Supplier extends Controller
 
     	$supplierDelete = DB::table('supplier')->where('SupplierID',$SupplierID)->delete();
 
-    	return redirect('supplierCreate')->with('success','Party/ Supplier deleted Successfully');
+    	return redirect('supplierCreate')->with('error','Party/ Supplier deleted Successfully');
 
 
     	# code...

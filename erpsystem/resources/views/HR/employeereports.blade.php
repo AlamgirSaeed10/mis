@@ -36,12 +36,12 @@
                             <h4 class="card-title mb-4">Chose date and department</h4>
                             <form class="repeater" action="{{ route('departmentreports_fetch') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
+                               
+                                    <div class="row">
                                         <div class="mb-3 col-lg-4">
                                             <label>Date</label>
                                             <div class="input-group" id="datepicker2">
-                                                <input type="text" name="date" class="form-control" placeholder="Choose date" autocomplete="off" data-date-format="yyyy-mm-dd"  data-provide="datepicker" data-date-autoclose="true">
+                                                <input type="text" name="date" class="form-control" placeholder="Choose date" autocomplete="off" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-autoclose="true">
 
                                                 <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                             </div><!-- input-group -->
@@ -61,31 +61,31 @@
 
                                         <div class="col-lg-2 align-self-center">
                                             <div class="d-grid">
-                                                <input data-repeater-delete type="submit" class="btn btn-primary" value="Check" />
+                                                <input type="submit" class="btn btn-primary" value="Check" />
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
+                              
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-          
 
-<div class="row"></div>
-<div class="row">
+
+            <div class="row"></div>
+            <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title mb-4">Chose between two dates</h4>
-                            <form class="repeater" action="{{ route('departmentreports_fetch_between') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('departmentreports_fetch_between') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
-                                        
-                                    <div class="mb-3 col-lg-4">
+                               
+                                    <div  class="row">
+
+                                        <div class="mb-3 col-lg-4">
                                             <label>From Date</label>
                                             <div class="input-group" id="datepicker2">
                                                 <input type="text" name="Fromdate" class="form-control" placeholder="Choose date" autocomplete="off" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-autoclose="true">
@@ -93,9 +93,9 @@
                                                 <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                             </div><!-- input-group -->
                                         </div>
-                                        
-                                        
-                                    <div class="mb-3 col-lg-4">
+
+
+                                        <div class="mb-3 col-lg-4">
                                             <label>To Date</label>
                                             <div class="input-group" id="datepicker2">
                                                 <input type="text" name="Todate" class="form-control" placeholder="Choose date" autocomplete="off" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-autoclose="true">
@@ -104,7 +104,7 @@
                                             </div><!-- input-group -->
                                         </div>
 
-                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3 col-lg-4">
                                             <label class="form-label">Departent</label>
                                             <select name="dep_id" class="form-control select2">
                                                 <option>Select</option>
@@ -118,12 +118,12 @@
 
                                         <div class="col-lg-2 align-self-center">
                                             <div class="d-grid">
-                                                <input data-repeater-delete type="submit" class="btn btn-primary" value="Check" />
+                                                <input type="submit" class="btn btn-primary" value="Check" />
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
+                               
                             </form>
                         </div>
                     </div>

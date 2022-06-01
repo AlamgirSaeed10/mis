@@ -136,7 +136,7 @@ class chartOfAccount extends Controller{
 
         $delete = DB::table('chartofaccount')->where('ChartOfAccountID', '=',$ChartOfAccountID);
         $delete->delete();
-        return redirect('chartofaccount')->with('success', 'Data deleted successfully');
+        return redirect('chartofaccount')->with('error', 'Data deleted successfully');
     }
 
 

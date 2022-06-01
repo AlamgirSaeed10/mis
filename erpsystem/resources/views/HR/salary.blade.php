@@ -169,7 +169,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="basicpill-firstname-input">Allowance<span class="text-danger">*</span></label>
-                                            <select name="allowance" class="form-select">
+                                            <select name="allowance" class="form-select" required>
                                                 <option value="">Select</option>
                                                 @foreach ($allownces as $value)
                                                 <option value="{{ $value->AllowanceTitle }}" style="@foreach ( $employeesalary as $key )   @if ($key->Allowncetitle == $value->AllowanceTitle) display:none   @endif   @endforeach">{{ $value->AllowanceTitle }}</option>

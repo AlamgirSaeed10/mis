@@ -229,7 +229,7 @@ class HRController extends Controller
     public function Deletesalary($EmployeeSalaryID)
     {
         DB::delete('delete from emp_salary where EmployeeSalaryID  = ?', [$EmployeeSalaryID]);
-        return redirect()->back()->with('error', 'Document Deleted successfully')->with('class', 'danger');;
+        return redirect()->back()->with('error', 'Salary Deleted successfully')->with('class', 'danger');;
     }
     function edit_salary_empl($EmployeeSalaryID)
     {

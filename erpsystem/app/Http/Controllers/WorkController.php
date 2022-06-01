@@ -229,7 +229,7 @@ class WorkController extends Controller
     function add_report(Request $request)
     {
         $this->validate($request, [
-            'Title' => 'required|max:30',
+            'Title' => 'required',
             'TextArea' => 'required',
 
         ]);

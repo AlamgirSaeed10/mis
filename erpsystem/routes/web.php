@@ -308,7 +308,6 @@ Route::get('DeleteChartOfAccountID/{ChartOfAccountID}',[chartOfAccount::class,'D
 
 
 
-
 // Testing Ajax Request and storing in database using datalist
 Route::get('test', [chartOfAccount::class,'test']);
 // ====================================END AJAX========================================

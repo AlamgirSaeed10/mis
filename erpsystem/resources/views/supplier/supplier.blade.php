@@ -1,5 +1,5 @@
-@extends('HR.hr-layout.main')
-@section('title', $pagetitle)
+@extends('template.main_tmp')
+@section('title', 'Supplier')
 @section('content')
 <div class="main-content">
     <div class="page-content">
@@ -132,6 +132,7 @@
         </div>
         <!-- End Page-content -->
     </div>
+    
     <script>
          $("#success-alert").fadeTo(4000, 500).slideUp(100, function(){
           $("#success-alert").slideUp("slow");
