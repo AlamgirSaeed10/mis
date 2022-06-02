@@ -1,4 +1,4 @@
-@extends('HR.hr-layout.main')
+@extends('template.main_tmp')
 @section('title', $pagetitle)
 @section('content')
 <div class="main-content">
@@ -90,7 +90,7 @@
                         <tr>
                             <td>#</td>
                             <td>PartyName</td>
-                            <td>Address</td>
+                            <td style="width: 100%;">Address</td>
                             <td>Phone</td>
                             <td>Email</td>
                             <td>Active</td>
@@ -104,14 +104,14 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$value->PartyName}}</td>
-                            <td>{{$value->Address}}</td>
+                            <td style="width: 100%;">{{$value->Address}}</td>
                             <td>{{$value->Phone}}</td>
                             <td>{{$value->Email}}</td>
                             <td>{{$value->Active}}</td>
                             <td>{{$value->InvoiceDueDays}}</td>
                             <td>{{$value->eDate}}</td>
                             <td>
-                            <a href="{{URL('customerEdit/'.$value->PartyID)}}"><i class="bx bx-pencil align-middle me-1"></i></a> <a href="#" onclick="delete_confirm2('customerDelete',{{$value->PartyID}})"><i class="bx bx-trash  align-middle me-1"></i></a>                               
+                            <a href="{{URL('customerEdit/'.$value->PartyID)}}"><i class="bx bx-pencil align-middle text-secondary me-1"></i></a> <a href="#" onclick="delete_confirm2('customerDelete','{{$value->PartyID}}')"><i class="bx bx-trash text-secondary  align-middle me-1"></i></a>                               
                             </td>
                         </tr>
                         @endforeach

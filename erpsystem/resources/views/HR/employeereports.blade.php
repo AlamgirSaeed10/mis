@@ -1,4 +1,4 @@
-@extends('template.main_tmp')
+@extends('HR.hr-layout.main')
 
 @section('title', 'Employee Reports')
 
@@ -36,8 +36,8 @@
                             <h4 class="card-title mb-4">Chose date and department</h4>
                             <form class="repeater" action="{{ route('departmentreports_fetch') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                               
-                                    <div class="row">
+                                <div data-repeater-list="group-a">
+                                    <div data-repeater-item class="row">
                                         <div class="mb-3 col-lg-4">
                                             <label>Date</label>
                                             <div class="input-group" id="datepicker2">
@@ -61,12 +61,12 @@
 
                                         <div class="col-lg-2 align-self-center">
                                             <div class="d-grid">
-                                                <input type="submit" class="btn btn-primary" value="Check" />
+                                                <input data-repeater-delete type="submit" class="btn btn-primary" value="Check" />
                                             </div>
                                         </div>
                                     </div>
 
-                              
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -74,16 +74,18 @@
             </div>
 
 
-            <div class="row"></div>
+            <div class="row">
+
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title mb-4">Chose between two dates</h4>
-                            <form action="{{ route('departmentreports_fetch_between') }}" method="post" enctype="multipart/form-data">
+                            <form class="repeater" action="{{ route('departmentreports_fetch_between') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                               
-                                    <div  class="row">
+                                <div data-repeater-list="group-a">
+                                    <div data-repeater-item class="row">
 
                                         <div class="mb-3 col-lg-4">
                                             <label>From Date</label>
@@ -118,13 +120,14 @@
 
                                         <div class="col-lg-2 align-self-center">
                                             <div class="d-grid">
-                                                <input type="submit" class="btn btn-primary" value="Check" />
+                                                <input data-repeater-delete type="submit" class="btn btn-primary" value="Check" />
                                             </div>
                                         </div>
                                     </div>
 
-                               
+                                </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -213,17 +216,11 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="row">
-                                  <div class="col-md-12">
-                                      <div class="form-group">
-                                          <label>Image</label>
-                                          <!-- <img src='images/' width="50px"> -->
-                                          <!-- <img src='' width="50px"> -->
-                                                                  </div>
-                                  </div>
-                              </div> --}}
+
                     </div>
                 </div>
+
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

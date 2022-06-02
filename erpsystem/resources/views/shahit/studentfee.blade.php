@@ -19,7 +19,7 @@
                                 <div class="page-title-right">
                                     <!-- button will appear here -->
 
-                                    <a href="{{ URL('/Employee') }}"
+                                    <a href="{{ URL('/students') }}"
                                         class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i
                                             class="mdi mdi-arrow-left  me-1 pt-5"></i> Go Back</a>
 

@@ -117,7 +117,7 @@
                             <td>{{$value->InvoiceDueDays}}</td>
                             <td>{{$value->Active}}</td>
                             <td>
-                            <a href="{{URL('supplierEdit/'.$value->SupplierID)}}"><i class="bx bx-pencil align-middle me-1"></i></a> <a href="#" onclick="delete_confirm2('supplierDelete',{{$value->SupplierID}})"><i class="bx bx-trash  align-middle me-1"></i></a>
+                            <a href="{{URL('supplierEdit/'.$value->SupplierID)}}"><i class="bx bx-pencil align-middle me-1 text-secondary"></i></a> <a href="#" onclick="delete_confirm2('supplierDelete','{{$value->SupplierID}}')"><i class="bx bx-trash  align-middle me-1  text-secondary"></i></a>
                             </td>
              </tr>
              @endforeach   

@@ -1,4 +1,4 @@
-@extends('template.main_tmp')
+@extends('HR.hr-layout.main')
 
 @section('title', 'Employee Reports By Date')
 
@@ -67,12 +67,12 @@
 
                                     <td style="font-size:15px" class="col-sm-2"><b>Tittle</b></td>
 
-                                    <td style="font-size:15px" class="col-sm-10">{{ $report->Title }}</td>
+                                    <td style="font-size:15px;" class="col-sm-10">{{ $report->Title }}</td>
                                 </tbody>
                                 <tbody class="table">
-                                    <td style="font-size:15px" class="col-sm-2"><b>Description</b></td>
+                                    <td style="font-size:15px; padding-top: 2%;" class="col-sm-2"><b>Description</b></td>
 
-                                    <td style="font-size:15px" class="col-sm-10">
+                                    <td style="font-size:15px; white-space: pre-line;" class="col-sm-10">
                                         <?php echo strip_tags($report->TextArea); ?>
                                     </td>
                                 </tbody>

@@ -272,18 +272,19 @@ class HRController extends Controller
 
         return view('HR.eReportsByDate', compact('reports', 'department'));
     }
-
-    function departmentreports_fetch_between(Request $request)
+    function department_reports_fetch_between(Request $request)
     {
         // dd($request);
         $reports = DB::table('v_employees_report')
+        ->groupBy('FirstName')
             ->whereBetween('eDate', [$request->Fromdate,$request->Todate])
             ->where('DepartmentID', '=', $request->dep_id)
             ->get();
         // dd($reports);
         $department = DB::table('department')->where('DepartmentID', '=', $request->dep_id)->get();
+        // dd($department);
 
-        return view('HR.eReportsByDate', compact('reports', 'department'));
+        return view('HR.eReportsByDateBetween', compact('reports', 'department'));
     }
 
     function singlereport($reportid)

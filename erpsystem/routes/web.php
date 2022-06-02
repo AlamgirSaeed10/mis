@@ -228,7 +228,7 @@ Route::get('employeeleaves/delete_leave/{LeaveID}',[HRController::class,'delete_
 
 Route::get('/reports',[HRController::class,'departmentreports'])->name('departreports');
 Route::post('/reports_fetch',[HRController::class,'departmentreports_fetch'])->name('departmentreports_fetch');
-Route::post('/reports_fetch_between',[HRController::class,'departmentreports_fetch_between'])->name('departmentreports_fetch_between');
+Route::post('/reports_fetch_between',[HRController::class,'department_reports_fetch_between'])->name('departmentreports_fetch_between');
 
 Route::get('/employeereport/{id}',[HRController::class,'singlereport']);
 
