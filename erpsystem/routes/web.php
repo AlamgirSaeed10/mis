@@ -38,7 +38,7 @@ Route::post('/check', [LoginController::class, 'UserVerify'])->name('auth.check'
 
 
 
-Route::group(['middleware' => ['isAdmin']], function () {
+Route::group(['middleware' => ['isAdmin']], function () {});
 
 
  Route::view('/dashboard', 'dashboard')->name('dashboard');
