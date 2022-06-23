@@ -83,8 +83,8 @@
                                             {{ $value->EducationLevelName }}
                                             </td>
                                             <td class="col-md-1">
-                                                <a href="{{ url('/editeducationlevel') }}/{{ $value->EducationLevelID }}"><i class="bx bx-pencil align-middle me-1"></i></a>
-                                                <i class="bx bx-trash  align-middle me-1 text-primary cursor-pointer" onclick="delete_confirm2('deleteeducationlevel','{{$value->EducationLevelID}}')"></i>
+                                                <a href="{{ url('/editeducationlevel') }}/{{ $value->EducationLevelID }}"><i class="bx bx-pencil align-middle text-secondary me-1"></i></a>
+                                                <i class="bx bx-trash  align-middle me-1 text-secondary cursor-pointer" onclick="delete_confirm2('deleteeducationlevel','{{$value->EducationLevelID}}')"></i>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>

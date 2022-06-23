@@ -72,8 +72,8 @@
                                             <td class="col-md-10">
                                                 {{$jobtitle->JobTitleName}}
                                             <td class="col-md-1">
-                                                <a href="edit_job/{{$jobtitle->JobTitleID}}"><i class="bx bx-pencil align-middle me-1"></i></a> 
-                                                <i onclick="delete_confirm2('delete_job','{{ $jobtitle->JobTitleID  }}')" class="bx bx-trash  align-middle me-1 text-primary"></i>
+                                                <a href="edit_job/{{$jobtitle->JobTitleID}}"><i class="bx bx-pencil align-middle text-secondary me-1"></i></a> 
+                                                <i onclick="delete_confirm2('delete_job','{{ $jobtitle->JobTitleID  }}')" class="bx bx-trash  align-middle me-1 text-secondary"></i>
                                             </td>
                                             <td>
 

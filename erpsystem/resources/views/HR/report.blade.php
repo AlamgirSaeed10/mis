@@ -85,8 +85,8 @@
                                            <a href="https://docs.google.com/a/inu.edu.pk/viewer?{{asset('employee_report')}}/{{ $report->ReportFile }}"> {{ $report->ReportFile }}</a>
                                         </td>
                                         <td class="col-md-1">
-                                            <a href="edit_report/{{$report->ReportID  }}"><i class="bx bx-pencil align-middle me-1"></i></a>
-                                            <i class="bx bx-trash  align-middle me-1 text-primary cursor-pointer" onclick="delete_confirm2('delete_report','{{$report->ReportID }}')"></i>
+                                            <a href="edit_report/{{$report->ReportID  }}"><i class="bx bx-pencil text-secondary align-middle me-1"></i></a>
+                                            <i class="bx bx-trash  align-middle me-1 text-secondary cursor-pointer" onclick="delete_confirm2('delete_report','{{$report->ReportID }}')"></i>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>

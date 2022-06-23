@@ -11,7 +11,7 @@ use Image;
 use Excel;
 use File;
 use PDF;
-
+use Illuminate\Validation\Rule;
 class EmployeeController extends Controller
 {
     function show_departments()
@@ -231,11 +231,12 @@ class EmployeeController extends Controller
 
     function addemployee(Request $request)
     {
-
+       
         $this->validate(
             $request,
             [
                 'CNIC' => 'required|max:30||unique:employee',
+                'Email' =>'required|unique:employee'
             ],
             [
                 'CNIC.unique' => 'This CNIC already exists ',
@@ -411,6 +412,17 @@ class EmployeeController extends Controller
 
     function updateemployee(Request $request)
     {
+
+        $fetch_email = DB::table('employee')->where('EmployeeID' , $request->EmployeeID)->get('Email');
+      
+        
+        
+        $request->validate([
+            'Email' => Rule::unique('employee')->where(fn ($query) => $query->where('Email','!=',$fetch_email[0]->Email))
+
+
+            
+        ]);
 
         if ($request->hasFile('newpicture')) {
             $file = $request->file('newpicture');

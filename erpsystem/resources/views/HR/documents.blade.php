@@ -116,7 +116,7 @@
                                                         <div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
                                                             <a class="dropdown-item" href="{{ URL('/documents/' . $value->File) }}" target="_blank"><i class="fa fa-eye text-secondary"></i>&nbsp; Open</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" style="cursor: pointer;" onclick="delete_document('delete_documment','{{ $value->DocumentID }}')"><i class="fa fa-trash text-secondary"></i>&nbsp; Remove</a>
+                                                            <a class="dropdown-item " style="cursor: pointer;" onclick="delete_document('delete_documment','{{ $value->DocumentID }}')"><i class="fa fa-trash text-secondary"></i>&nbsp; Remove</a>
                                                         </div>
                                                     </div>
                                                 </td>

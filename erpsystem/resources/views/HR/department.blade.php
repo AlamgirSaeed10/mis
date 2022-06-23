@@ -71,8 +71,8 @@
                                                 {{ $value->DepartmentName  }}
                                             </td>
                                             <td class="col-md-1">
-                                                <a href="{{ url('/editdepartment') }}/{{ $value->DepartmentID  }}"><i class="bx bx-pencil align-middle me-1"></i></a>
-                                                <i class="bx bx-trash  align-middle me-1 text-primary cursor-pointer" onclick="delete_confirm2('deleteletter','{{ $value->DepartmentID }}')"></i>
+                                                <a href="{{ url('/editdepartment') }}/{{ $value->DepartmentID  }}"><i class="bx bx-pencil align-middle text-secondary me-1"></i></a>
+                                                <i class="bx bx-trash  align-middle text-secondary me-1 text-primary cursor-pointer" onclick="delete_confirm2('deleteletter','{{ $value->DepartmentID }}')"></i>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
