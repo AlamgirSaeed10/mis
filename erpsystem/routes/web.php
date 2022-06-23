@@ -18,6 +18,7 @@ use App\Http\Controllers\AddUser;
 use App\Http\Controllers\Profile;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\POSController;
 
 
 /*
@@ -109,9 +110,6 @@ Route::get('/employeedetail/{EmployeeID}',[EmployeeController::class,'view_emplo
 Route::get('/admin_dashboard', [LoginController::class, 'admin_dashboard'])->name('auth.admin_dashboard');
 Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
 
-// Route::get('/', function () {
-//     return view('check');
-// });
 
 Route::get('/Job_Title',[WorkController::class,'job']);
 Route::get('/edit_job/{id}',[WorkController::class,'edit_job']);
@@ -349,8 +347,6 @@ Route::get('userDelete/{UserID}', [AddUser::class,'userDelete']);
 // =================================== User Profile ================================================= 
 
 Route::get('ChangePassword', [Profile::class,'changepassword']);
-// Route::get('userProfile', [Profile::class,'changepassword']);
-// Route::get('userProfileEdit/{UserID}', [Profile::class,'userProfileEdit']);
 Route::post('userPasswordUpdate', [Profile::class,'userPasswordUpdate']);
 
 
@@ -358,5 +354,10 @@ Route::get('/Item',[HRController::class,'Item']);
 Route::get('/Voucher',[HRController::class,'Voucher']);
 Route::get('/JournalVoucher',[HRController::class,'Journal_Voucher']);
 
+// =================================== POS Terminal ================================================= 
 
-});
+
+Route::get('PosTerminal',[POSController::class,'PosTerminal']);
+Route::get('CreateOrder/{ItemID}',[POSController::class,'CreateOrder']);
+Route::get('DeleteOrderItem/{ItemID}',[POSController::class,'DeleteOrderItem']);
+Route::post('Checkout', [POSController::class,'Checkout']);

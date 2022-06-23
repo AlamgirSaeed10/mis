@@ -12,6 +12,7 @@
                                     <span key="t-dashboards">Dashboards</span>
                                 </a>
                             </li>
+                            
 
                             <li>
                                 <a href="{{URL('chartofaccount')}}" class="waves-effect">
@@ -32,10 +33,6 @@
                                     <i class='bx bxs-note'></i>
                                     <span key="t-ecommerce">Notice Board</span>
                                 </a>
-                                <!-- <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{URL('/addNewNotice')}}" key="t-products">Add New Notice</a></li>
-                                    <li><a href="{{URL('datatable')}}" key="t-products">View All Notices</a></li>
-                                </ul> -->
                             </li>
 
                             <li>
