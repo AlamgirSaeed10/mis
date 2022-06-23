@@ -31,8 +31,18 @@ use App\Http\Controllers\POSController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//login
 Route::get('/', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
+Route::post('/check', [LoginController::class, 'UserVerify'])->name('auth.check');
 
+
+
+Route::group(['middleware' => ['isAdmin']], function () {
+
+
+ Route::view('/dashboard', 'dashboard')->name('dashboard');
+    
 //departments
 Route::get('/departments',[EmployeeController::class,'show_departments'])->name('departments');
 Route::get('/deletedepartment/{DepartmentID}',[EmployeeController::class,'deletedepartment']);
@@ -96,14 +106,10 @@ Route::get('/deletemployeedata/{EmployeeID}',[EmployeeController::class,'deletem
 Route::get('/employeedetail/{EmployeeID}',[EmployeeController::class,'view_employee']);
 
 
-Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
-Route::post('/check', [LoginController::class, 'UserVerify'])->name('auth.check');
+
 Route::get('/admin_dashboard', [LoginController::class, 'admin_dashboard'])->name('auth.admin_dashboard');
 Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
 
-// Route::get('/', function () {
-//     return view('check');
-// });
 
 Route::get('/Job_Title',[WorkController::class,'job']);
 Route::get('/edit_job/{id}',[WorkController::class,'edit_job']);
@@ -138,7 +144,6 @@ Route::post('/allowance',[HRController::class,'add_allowance'])->name('allowance
 Route::get('/editallowance/{id}',[HRController::class,'edit_allowance']);
 Route::post('/update_allowance',[HRController::class,'update_allowanceses'])->name('update_allowance');
 
-Route::view('/dashboard', 'dashboard')->name('dashboard');
 Route::view('/customer', 'customer')->name('customer');
 
 

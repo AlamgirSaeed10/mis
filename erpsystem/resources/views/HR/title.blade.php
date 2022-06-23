@@ -84,8 +84,8 @@
                                                 {{ $value->Title }}
                                             </td>
                                             <td class="col-md-1">
-                                                <a href="{{ url('/edittitle') }}/{{ $value->TitleID }}"><i class="bx bx-pencil align-middle me-1"></i></a>
-                                                <i class="bx bx-trash  align-middle me-1 text-primary cursor-pointer" onclick="delete_confirm2('deletetitle','{{$value->TitleID}}')"></i>
+                                                <a href="{{ url('/edittitle') }}/{{ $value->TitleID }}"><i class="bx bx-pencil text-secondary align-middle me-1"></i></a>
+                                                <i class="bx bx-trash  align-middle me-1 text-secondary cursor-pointer" onclick="delete_confirm2('deletetitle','{{$value->TitleID}}')"></i>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>

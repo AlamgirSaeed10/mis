@@ -81,9 +81,9 @@
                                             {{ $letter->Title }}
                                         </td>
                                         <td class="col-md-1">
-                                            <a href="edit_letter/{{$letter->LetterID }}"><i class="bx bx-pencil align-middle me-1"></i></a>
+                                            <a href="edit_letter/{{$letter->LetterID }}"><i class="bx bx-pencil text-secondary align-middle me-1"></i></a>
                                             <!-- <a href="delete_letter/{{ $letter->LetterID  }}"  class="text-primary"><i class="bx bx-trash  align-middle me-1"></i></a> -->
-                                            <i class="bx bx-trash  align-middle me-1 text-primary" style="cursor:pointer;" onclick="delete_confirm2('letter_delete','{{ $letter->LetterID  }}')" ></i>
+                                            <i class="bx bx-trash  align-middle me-1 text-secondary" style="cursor:pointer;" onclick="delete_confirm2('letter_delete','{{ $letter->LetterID  }}')" ></i>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>

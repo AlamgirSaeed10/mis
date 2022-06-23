@@ -57,6 +57,13 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                        <a href="{{ route('departreports')}}" class=" waves-effect">
+                            <i class="bx bx-layout"></i>
+                            <span key="t-layouts">Reports</span>
+                        </a>
+                     
+                    </li>
                 
                 <li>
                     <a href="{{URL('chartofaccount')}}" class="waves-effect">

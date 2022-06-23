@@ -16,10 +16,16 @@ class isAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role == 1){
+               
+        if (session()->has('FullName')) 
+        {
             return $next($request);
-        }else{
-            return redirect()->route('login');
+            
         }
+      else
+      {
+        return redirect('login')->with('error', 'Please Login First');
+      }
+     
     }
 }

@@ -61,8 +61,8 @@
                                             {{$leave_status->LeaveStatus}}
                                         </td>
                                         <td class="col-md-1">
-                                            <a href="edit_status/{{ $leave_status->LeaveStatusID }}"><i class="bx bx-pencil align-middle me-1"></i></a>
-                                            <i onclick="delete_confirm2('delete_leave_status','{{ $leave_status->LeaveStatusID  }}')" class="bx bx-trash  align-middle me-1 text-primary"></i>
+                                            <a href="edit_status/{{ $leave_status->LeaveStatusID }}"><i class="bx bx-pencil align-middle me-1 text-secondary"></i></a>
+                                            <i onclick="delete_confirm2('delete_leave_status','{{ $leave_status->LeaveStatusID  }}')" class="bx bx-trash  align-middle me-1 text-secondary"></i>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
