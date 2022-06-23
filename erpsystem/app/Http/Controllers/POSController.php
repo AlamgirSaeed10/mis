@@ -74,7 +74,6 @@ class POSController extends Controller
         ->select( DB::raw('LPAD(IFNULL(MAX(right(InvoiceNo,5)),0)+1,5,0) as VHNO '))
         ->where(DB::raw('left(InvoiceNo,3)'),'POS')->get();
 
-
         $invoice_master_data = array(
             
             'InvoiceNo' => $vhno,
