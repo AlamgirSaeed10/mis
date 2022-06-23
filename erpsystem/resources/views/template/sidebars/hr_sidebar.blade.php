@@ -12,6 +12,12 @@
                     </a>
                 </li>
                 <li>
+                                <a href="{{URL('/PosTerminal')}}" class="waves-effect">
+                                    <i class="mdi mdi-cash-register"></i>
+                                    <span key="t-dashboards">Sales POS</span>
+                                </a>
+                            </li>
+                <li>
                     <a href="{{ route('showemployee') }}" class="waves-effect">
                         <i class="bx bxs-user-detail"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Employee</span>
@@ -54,7 +60,7 @@
                 
                 <li>
                     <a href="{{URL('chartofaccount')}}" class="waves-effect">
-                        <i class="mdi mdi-cash-register"></i>
+                        <i class="mdi mdi-chart-box-outline"></i>
                         <span key="t-calendar">Chart Of Account</span>
                     </a>
                 </li>

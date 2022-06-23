@@ -30,6 +30,8 @@
 
 
 
+<script src="{{URL('/')}}/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
