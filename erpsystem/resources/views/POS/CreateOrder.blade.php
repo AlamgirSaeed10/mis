@@ -145,7 +145,7 @@
 
 									<div class="col-sm-12">
 										<div class="text-sm-end mt-2 mt-sm-0">
-											<button type="submit" class="btn btn-success">
+											<button type="submit" id="submit" class="btn btn-success">
 												<i class="mdi mdi-cart-arrow-right me-1"></i> Checkout
 											</button>
 										</div>

@@ -13,7 +13,7 @@ class POSController extends Controller
         $Item = DB::table('item')->get();
         $Categories = DB::table('categories')->get();
         $LastInvoiceData = DB::table('v_item_detail')->where("Token",Session::get('qwick'))->get();
-        $Flag = DB::table('v_item_detail')->where('Token',session::get('qwick'))->where('Flag',0)->get();
+        $Flag = DB::table('v_item_detail')->get();
 
 
         return view("POS/PosTerminal",compact('Item','Categories','LastInvoiceData','Flag'));
@@ -54,7 +54,7 @@ class POSController extends Controller
         $StoreOrderData = DB::table('invoice_detail')->insert($data);
         
 }
-        $Flag = DB::table('invoice_detail')->where('Token',session::get('qwick'))->where('Flag',0)->get();
+        $Flag = DB::table('v_item_detail')->where('Token',session::get('qwick'))->where('Flag',0)->get();
 
         return view('POS/CreateOrder',compact('CreateOrder','Flag'));    
            

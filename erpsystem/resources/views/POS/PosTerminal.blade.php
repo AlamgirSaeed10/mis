@@ -1,6 +1,12 @@
 @extends('HR.hr-layout.main')
 @section('title', 'POS Terminal')
 @section('content')
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+
 <style type="text/css">
 .card .img-wrap {
 overflow: hidden;
@@ -28,7 +34,6 @@ td {
 text-align: right;
 }
 </style>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="main-content">
 	<div class="page-content">
 		<div class="container-fluid">
@@ -47,16 +52,6 @@ text-align: right;
 				{{csrf_field()}}
 				
 				<div class="row">
-					<div class="col-sm-12 col-lg-12 col-md-12">
-						<div class="mb-3">
-							<input class="form-control" list="item_names_list" id="exampleDataList" placeholder="Type to search...">
-							<datalist id="item_names_list">
-							@foreach($Item as $value)
-							<option value="{{$value->ItemName}}"> {{$value->ItemName}} </option>
-							@endforeach
-							</datalist>
-						</div>
-					</div>
 					@if(session()->has('qwick'))
 					<input type="hidden" id="rand" value="{{session()->get('qwick')}}">
 					
@@ -269,24 +264,31 @@ text-align: right;
 	</div>
 </div>
 <script>
+// 	 $( document ).ready(function() {
+    
+//   $('body').addClass('sidebar-enable vertical-collpsed');
+// });
 
-	$( "#submit" ).click(function() {   
+	$('#submit').click(function() {  
 
- if (parseInt($('#Paid').val())!= parseInt($('#itemTotal').val()) ) {
+	 
+		paid = parseFloat($('#Paid').val());
+		itemTotal = parseFloat($('#itemTotal').val());
+
+		alert(paid + '---' + itemTotal);
+
+ if ( paid < itemTotal) {
         $('#Paid').css("border", "1px dashed red");
         $('#itemTotal').css("border", "1px dashed red");
-        
-        Swal.fire({
-        	icon: 'swal2-icon-show',
-  position: 'center',
-  title: 'Paid amount is less then Total Amount',
-  showConfirmButton: false,
-  timer: 3000
-})
 
+        Swal.fire({
+			  icon: 'error',
+			  title: 'Not Found...',
+			  text: 'Something went wrong!',
+			  footer: '<a href>Are you facing any issue?</a>'
+			})
 
         return false;
-
     }
 });
 

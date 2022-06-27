@@ -13,6 +13,9 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="{{URL('/')}}/assets/libs/toastr/build/toastr.min.css">
  
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
@@ -330,6 +333,13 @@
     <script src="assets/js/pages/datatables.init.js"></script>
     <script src="assets/js/app.js"></script>
     
+
+     <script src="{{URL('/')}}/assets/libs/toastr/build/toastr.min.js"></script>
+
+        <!-- toastr init -->
+        <script src="{{URL('/')}}/assets/js/pages/toastr.init.js"></script>
+
+
 
   
 </body>

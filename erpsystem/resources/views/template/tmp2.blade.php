@@ -35,7 +35,7 @@
     <!-- Responsive datatable examples -->
     <link href="{{URL('/')}}/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <!-- Sweet Alert-->
-    <link href="{{URL('/')}}/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="{{URL('/')}}/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" /> -->
 
     <link href="{{URL('/')}}/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"
         type="text/css">
@@ -122,7 +122,7 @@
         <script src="{{URL('/')}}/assets/js/pages/ecommerce-select2.init.js"></script>
 
         <!-- Sweet Alerts js -->
-        <script src="{{URL('/')}}/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+        <!-- <script src="{{URL('/')}}/assets/libs/sweetalert2/sweetalert2.min.js"></script> -->
 
         <!-- Sweet alert init js-->
         <script src="{{URL('/')}}/assets/js/pages/sweet-alerts.init.js"></script>
