@@ -93,6 +93,23 @@
                         <span key="t-calendar">Customer</span>
                     </a>
                 </li>
+                <hr>
+                <li>
+                        <a href="{{URL('/ViewAllFiles')}}" class="waves-effect">
+                            <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end"></span>
+                            <span key="t-dashboard">View Files</span>
+                        </a>
+                       
+                    </li>
+
+
+                    <li>
+                        <a href="{{URL('/kanbanTaskBoard')}}" class="waves-effect">
+                            <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end"></span>
+                            <span key="t-dashboard">Kanban Board</span>
+                        </a>
+                       
+                    </li>
             </ul>
         </div>
         <!-- Sidebar -->

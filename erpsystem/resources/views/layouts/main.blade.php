@@ -238,6 +238,23 @@
                             </li>
                         </ul>
                     </li>
+
+<hr>
+ <li>
+                        <a href="{{URL('/ViewFile')}}" class="waves-effect">
+                            <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end"></span>
+                            <span key="t-dashboard">View Files</span>
+                        </a>
+                       
+                    </li>
+
+
+
+
+
+
+
+
                 </ul>
             </div>
                 <!-- Sidebar -->

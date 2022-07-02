@@ -13,6 +13,12 @@
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
 
+
+
+        <link href="assets/libs/dragula/dragula.min.css" rel="stylesheet" type="text/css" />
+
+
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
         
         <link rel="shortcut icon" href="{{URL('/')}}/assets/images/Shah-Corps_Logo.png">
@@ -272,6 +278,14 @@
 
         <!-- toastr init -->
         <script src="{{URL('/')}}/assets/js/pages/toastr.init.js"></script>
+
+         <!-- dragula plugins -->
+        <script src="assets/libs/dragula/dragula.min.js"></script>
+
+        <!-- jquery-validation -->
+      
+
+        <script src="assets/js/pages/task-kanban.init.js"></script>
 
 
     </body>

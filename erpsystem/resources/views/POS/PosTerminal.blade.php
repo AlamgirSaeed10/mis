@@ -8,31 +8,35 @@
 
 
 <style type="text/css">
-.card .img-wrap {
-overflow: hidden;
-}
-.card-product .img-wrap {
-border-radius: 0.2rem 0.2rem 0 0;
-overflow: hidden;
-position: relative;
-height: 200px;
-text-align: center;
-}
-.img-wrap {
-text-align: center;
-display: block;
-}
-.card-product .img-wrap img {
-max-height: 100%;
-max-width: 100%;
-width: auto;
-display: inline-block;
--o-object-fit: cover;
-object-fit: cover;
-}
-td {
-text-align: right;
-}
+	.card .img-wrap {
+		overflow: hidden;
+	}
+
+	.card-product .img-wrap {
+		border-radius: 0.2rem 0.2rem 0 0;
+		overflow: hidden;
+		position: relative;
+		height: 200px;
+		text-align: center;
+	}
+
+	.img-wrap {
+		text-align: center;
+		display: block;
+	}
+
+	.card-product .img-wrap img {
+		max-height: 100%;
+		max-width: 100%;
+		width: auto;
+		display: inline-block;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	td {
+		text-align: right;
+	}
 </style>
 <div class="main-content">
 	<div class="page-content">
@@ -50,11 +54,11 @@ text-align: right;
 			<!-- enctype="multipart/form-data" -->
 			<form action="{{URL('/Checkout')}}" method="post">
 				{{csrf_field()}}
-				
+
 				<div class="row">
 					@if(session()->has('qwick'))
 					<input type="hidden" id="rand" value="{{session()->get('qwick')}}">
-					
+
 					@else
 					{{ $rand = rand(1,9999)}} {{session()->put('qwick',$rand)}}
 					@endif
@@ -64,7 +68,8 @@ text-align: right;
 								<ul class="nav nav-pills nav-justified" role="tablist">
 									@foreach($Categories as $key => $value)
 									<li class="nav-item waves-effect waves-light">
-										<a class="nav-link {{($key == 0)? 'active' : ''}}" data-bs-toggle="tab" href="#{{$value->CategoryName}}" role="tab">
+										<a class="nav-link {{($key == 0)? 'active' : ''}}" data-bs-toggle="tab"
+											href="#{{$value->CategoryName}}" role="tab">
 											<span class="">{{$value->CategoryName}}</span>
 										</a>
 									</li>
@@ -73,24 +78,28 @@ text-align: right;
 								<!-- Tab panes -->
 								<div class="tab-content p-3 text-muted">
 									@foreach($Categories as $key => $value)
-									<div class="tab-pane {{($key ==0)? 'active' : ''}}" id="{{$value->CategoryName}}" role="tabpanel">
+									<div class="tab-pane {{($key ==0)? 'active' : ''}}" id="{{$value->CategoryName}}"
+										role="tabpanel">
 										<p class="mb-0">
-											<div class="row">
-												@php $summary = DB::table('item')->where('CategoryID',$value->CategoryID)->get();
-												@endphp
-												
-												@foreach($summary as $value)
-												<div class="col-md-3 col-sm-12 lg-4" onclick="CreateOrder({{$value->ItemID}})">
-													<figure class="card card-product shadow p-3 mb-5 bg-white rounded">
-														<div class="img-wrap">
-															<input type="hidden" id="ItemID" value="{{$value->ItemID}}">
-															<img src="{{ asset('assets/images/product/' . $value->ItemImage) }}" />
-															<h6>{{$value->ItemName}} </h6>
-														</div>
-													</figure>
-												</div>
-												@endforeach
+										<div class="row">
+											@php $summary =
+											DB::table('item')->where('CategoryID',$value->CategoryID)->get();
+											@endphp
+
+											@foreach($summary as $value)
+											<div class="col-md-3 col-sm-12 lg-4"
+												onclick="CreateOrder({{$value->ItemID}})">
+												<figure class="card card-product shadow p-3 mb-5 bg-white rounded">
+													<div class="img-wrap">
+														<input type="hidden" id="ItemID" value="{{$value->ItemID}}">
+														<img
+															src="{{ asset('assets/images/product/' . $value->ItemImage) }}" />
+														<h6>{{$value->ItemName}} </h6>
+													</div>
+												</figure>
 											</div>
+											@endforeach
+										</div>
 										</p>
 									</div>
 									@endforeach
@@ -107,7 +116,7 @@ text-align: right;
 											<label for="basicpill-firstname-input">Customer Type</label>
 											<select name="PartyID" id="PartyID" class="form-select">
 												<option value="Walk-in">Walk-in</option>
-											</div>
+										</div>
 										</select>
 									</div>
 									<div class="table-responsive">
@@ -133,18 +142,26 @@ text-align: right;
 													</td>
 													<td>
 														{{$value->TotalAmount}}
-														<input type="hidden" name="changeNoo" id="CostPrice_{{$value->ItemID}}" value="{{$value->TotalAmount}}">
+														<input type="hidden" name="changeNoo"
+															id="CostPrice_{{$value->ItemID}}"
+															value="{{$value->TotalAmount}}">
 													</td>
 													<td width="20%">
-														<input type="text" value="{{$value->Quantity}}" id="qty_{{$value->ItemID}}" value="1" name="demo_vertical1" class="form-control changesNoo text-center">
+														<input type="text" value="{{$value->Quantity}}"
+															id="qty_{{$value->ItemID}}" value="1" name="demo_vertical1"
+															class="form-control changesNoo text-center">
 													</td>
 													<td>
-														<input type="hidden" name="changeNoo" id="TotalPrice_{{$value->ItemID}}" value="{{$value->TotalAmount}}" class="totalLinePrice">
-														<div id="TotalPriceDiv_{{$value->ItemID}}">{{$value->Quantity * $value->TotalAmount}}
+														<input type="hidden" name="changeNoo"
+															id="TotalPrice_{{$value->ItemID}}"
+															value="{{$value->TotalAmount}}" class="totalLinePrice">
+														<div id="TotalPriceDiv_{{$value->ItemID}}">{{$value->Quantity *
+															$value->TotalAmount}}
 														</div>
 													</td>
 													<td>
-														<a href="DeleteOrderItem/{{$value->ItemID}}" class="action-icon text-danger">
+														<a href="DeleteOrderItem/{{$value->ItemID}}"
+															class="action-icon text-danger">
 															<i class="mdi mdi-trash-can font-size-16"></i>
 														</a>
 													</td>
@@ -163,8 +180,10 @@ text-align: right;
 														<div class="col-sm-4 col-lg-12 col-md-12">
 															<div class="form-group mt-1">
 																<div class="input-group mt-1">
-																	
-																	<input type="text" value="0" class="form-control order_summary bg-white" id="subTotal" name="subTotal" readonly="">
+
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="subTotal" name="subTotal" readonly="">
 																	<label class="input-group-text">PKR</label>
 																</div>
 															</div>
@@ -172,16 +191,21 @@ text-align: right;
 													</td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Discount  </td>
+													<td style="text-align: left;">Discount </td>
 													<td>
 														<div class="col-sm-4 col-lg-12 col-md-12">
 															<div class="form-group mt-1">
 																<div class="input-group mt-1">
-																	<input type="text" value="0" class="form-control order_summary bg-white" id="discount" name="discount">
-																	<input type="hidden" value="0" class="form-control order_summary" id="discountAmount" name="discountAmount">
-																	<label id="discPer" class="input-group-text">0.0 &nbsp;</label>
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="discount" name="discount">
+																	<input type="hidden" value="0"
+																		class="form-control order_summary"
+																		id="discountAmount" name="discountAmount">
+																	<label id="discPer" class="input-group-text">0.0
+																		&nbsp;</label>
 																</div>
-																
+
 															</div>
 														</div>
 													</td>
@@ -192,9 +216,14 @@ text-align: right;
 														<div class="col-sm-4 col-lg-12 col-md-12">
 															<div class="form-group mt-1">
 																<div class="input-group mt-1">
-																	<input type="text" value="0" class="form-control order_summary bg-white" id="tax" name="tax">
-																	<input type="hidden" value="0" class="form-control order_summary" id="taxAmount" name="taxAmount">
-																	<label id="taxPer" class="input-group-text">0.0 &nbsp;</label>
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="tax" name="tax">
+																	<input type="hidden" value="0"
+																		class="form-control order_summary"
+																		id="taxAmount" name="taxAmount">
+																	<label id="taxPer" class="input-group-text">0.0
+																		&nbsp;</label>
 																</div>
 															</div>
 														</div>
@@ -206,8 +235,10 @@ text-align: right;
 														<div class="col-sm-4 col-lg-12 col-md-12">
 															<div class="form-group mt-1">
 																<div class="input-group mt-1">
-																	
-																	<input type="text" value="0" class="form-control order_summary bg-white" id="itemTotal" name="itemTotal" readonly="">
+
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="itemTotal" name="itemTotal" readonly="">
 																	<label class="input-group-text">PKR</label>
 																</div>
 															</div>
@@ -220,7 +251,9 @@ text-align: right;
 														<div class="col-sm-4 col-lg-12 col-md-12">
 															<div class="form-group mt-1">
 																<div class="input-group mt-1">
-																	<input type="text" value="0" class="form-control order_summary bg-white" id="Paid" name="Paid">
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="Paid" name="Paid">
 																	<label class="input-group-text">PKR</label>
 																</div>
 															</div>
@@ -229,17 +262,19 @@ text-align: right;
 												</tr>
 												<tr>
 													<td style="text-align: left;">Balance</td>
-														<td>
-															<div class="col-sm-4 col-lg-12 col-md-12">
-																<div class="form-group mt-1">
-																	<div class="input-group mt-1">
-																		<input type="text" value="0" class="form-control order_summary bg-white" id="Balance" name="Balance" readonly="">
-																		<label class="input-group-text">PKR</label>
-																	</div>
-																	
+													<td>
+														<div class="col-sm-4 col-lg-12 col-md-12">
+															<div class="form-group mt-1">
+																<div class="input-group mt-1">
+																	<input type="text" value="0"
+																		class="form-control order_summary bg-white"
+																		id="Balance" name="Balance" readonly="">
+																	<label class="input-group-text">PKR</label>
 																</div>
+
 															</div>
-														</td>
+														</div>
+													</td>
 												</tr>
 											</tbody>
 										</table>
@@ -247,50 +282,48 @@ text-align: right;
 
 									<div class="col-sm-12">
 										<div class="text-sm-end mt-2 mt-sm-0">
-											<button type="submit" id="submit" class="btn btn-success">
+											<button type="submit" id="checkout" class="btn btn-success">
 												<i class="mdi mdi-cart-arrow-right me-1"></i> Checkout
 											</button>
 										</div>
 									</div>
-									</div>
 								</div>
 							</div>
 						</div>
-						
 					</div>
+
 				</div>
-			</form>
 		</div>
+		</form>
 	</div>
 </div>
+</div>
 <script>
-// 	 $( document ).ready(function() {
+	$( document ).ready(function() {
     
-//   $('body').addClass('sidebar-enable vertical-collpsed');
-// });
+  $('body').addClass('sidebar-enable vertical-collpsed');
+});
 
-	$('#submit').click(function() {  
+// 	$('#submit').click(function() {  
 
 	 
-		paid = parseFloat($('#Paid').val());
-		itemTotal = parseFloat($('#itemTotal').val());
+// 		paid = parseFloat($('#Paid').val());
+// 		itemTotal = parseFloat($('#itemTotal').val());
 
-		alert(paid + '---' + itemTotal);
+//  if ( paid < itemTotal) {
+//         $('#Paid').css("border", "1px dashed red");
+//         $('#itemTotal').css("border", "1px dashed red");
 
- if ( paid < itemTotal) {
-        $('#Paid').css("border", "1px dashed red");
-        $('#itemTotal').css("border", "1px dashed red");
+//         Swal.fire({
+// 			  icon: 'error',
+// 			  title: 'Not Found...',
+// 			  text: 'Something went wrong!',
+// 			  footer: '<a href>Are you facing any issue?</a>'
+// 			})
 
-        Swal.fire({
-			  icon: 'error',
-			  title: 'Not Found...',
-			  text: 'Something went wrong!',
-			  footer: '<a href>Are you facing any issue?</a>'
-			})
-
-        return false;
-    }
-});
+//         return false;
+//     }
+// });
 
 $(document).on('change keyup blur', '.changesNoo', function() {
 	

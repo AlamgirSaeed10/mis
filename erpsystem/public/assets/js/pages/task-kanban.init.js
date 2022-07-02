@@ -1,1 +1,1 @@
-dragula([document.getElementById("upcoming-task"),document.getElementById("inprogress-task"),document.getElementById("complete-task")]);
+dragula([document.getElementById("start-task"),document.getElementById("info-task")]);

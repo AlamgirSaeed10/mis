@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-use DB;
-use Session;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use PDF;
+use Response;
 class POSController extends Controller
 {
     
@@ -57,9 +59,6 @@ class POSController extends Controller
         $Flag = DB::table('v_item_detail')->where('Token',session::get('qwick'))->where('Flag',0)->get();
 
         return view('POS/CreateOrder',compact('CreateOrder','Flag'));    
-           
-
-
     }
     public function DeleteOrderItem($ItemID){
 
@@ -99,11 +98,69 @@ class POSController extends Controller
         Session::flash('qwick');
         return redirect('PosTerminal')->with('success','Data Saved Successfully!');
 
+    }
+
+    public function ViewAllFiles()
+    {
+         $ViewAll = DB::table('report')->get();
+         if(count($ViewAll) < 1){
+        return view('POS/upload-file',compact('ViewAll'))->with('error','No File found');
+
+         }
+        return view('POS/upload-file',compact('ViewAll'));
+    }
+
+    public function uploadFile(Request $request){
+
+        $mimeType = 0;  
+
+        $this->validate($request,[
+                'file' => 'required',
+            ]);
+
+        if(substr(request()->file->getMimeType(), 0, 5) == 'image') {
+            $mimeType = 0;
+        }else{
+            $mimeType = 1;
+        }
+
+         $title = request()->file->getClientOriginalName();
+        $request->file->move(public_path('uploaded-files'), $title);
 
 
+        $ReportFileData =array(
 
+            'ReportFile'=> $title,
+            'Title' => $title,
+            'MimeType'=> $mimeType,
+
+        );
+
+            $ReportFile = DB::table('report')->insert($ReportFileData);
+           
+
+        $ViewAll = DB::table('report')->get();
+
+          return view('POS/upload-file',compact('ViewAll'))->with('success' ,'File Uploaded Successfully');
 
     }
+    public function downloadfile($ReportID){
+         $report = DB::table('report')->where('ReportID',$ReportID)->get();
+         $filename = $report[0]->ReportFile;
+        $file= public_path(). "/uploaded-files/".$filename;
+        $headers = array(
+                  'Content-Type: application/pdf',
+                );
+        return Response::download($file, $filename , $headers);
+    }
+    public function deleteFile($ReportID){
+        $deleteReport = DB::table('report')->where('ReportID',$ReportID)->delete();
+        $ViewAll = DB::table('report')->get();
+        return view('POS/upload-file',compact('ViewAll'));
+ 
+    }
+
+
 
 
 

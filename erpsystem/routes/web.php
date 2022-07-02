@@ -18,8 +18,10 @@ use App\Http\Controllers\AddUser;
 use App\Http\Controllers\Profile;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\POSController;
-
+use App\Http\Controllers\KanbanTaskBoard;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -185,7 +187,11 @@ Route::get('/employeeloandelete/{id}',[EmployeeController::class,'loandelete'])-
 
 
 Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
-Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
+// Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
+Route::get('SendEmail', [EmailController::class,'SendEmail']);
+Route::get('InvoicePDF/{id}',[EmailController::class,'InvoicePDF']);
+
+
 
 Route::get('IssueLetter',[WorkController::class,'IssueLetter']);
 Route::get('IssueLetter',[WorkController::class,'letter_issue_preview']);
@@ -361,3 +367,15 @@ Route::get('PosTerminal',[POSController::class,'PosTerminal']);
 Route::get('CreateOrder/{ItemID}',[POSController::class,'CreateOrder']);
 Route::get('DeleteOrderItem/{ItemID}',[POSController::class,'DeleteOrderItem']);
 Route::post('Checkout', [POSController::class,'Checkout']);
+
+
+// =================================== File Upload Using AJAX ================================================= 
+
+Route::post('uploadFile',[POSController::class,'uploadFile']);
+Route::get('ViewAllFiles',[POSController::class,'ViewAllFiles']);
+Route::get('downloadFile/{ReportID}',[POSController::class,'downloadFile']);
+Route::get('deleteReport/{ReportID}',[POSController::class,'deleteFile']);
+
+// ===================================Kanban Task Board ================================================= 
+
+Route::get('kanbanTaskBoard',[KanbanTaskBoard::class,'kanbanTaskBoard']);
